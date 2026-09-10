@@ -1,17 +1,29 @@
-# The Drape Factory — Public Website Build 4.1
+# The Drape Factory — Public Website Build 4.2
 
-Reference-match rebuild focused on the approved compact editorial layout.
+Pixel-density reference build.
 
-Changes:
-- Reduced overall desktop content width for a denser, more premium composition.
-- Made the hero shorter and more compact.
-- Tightened navigation, benefit strip, collections, process, projects, about, FAQ, contact, and footer spacing.
-- Reduced oversized white gaps.
-- Matched collection and project card proportions more closely to the approved reference.
-- Preserved clean photography, logo, favicon, WhatsApp, email, and enquiry functionality.
+This version targets the approved reference screenshot's compact editorial proportions rather than generic desktop scaling.
 
-WhatsApp: +91 91087 76325
-Email: orders@thedrapefactory.in
+Refinements:
+- tighter header and navigation
+- shorter hero and more controlled image ratio
+- denser four-benefit strip
+- narrower Collections intro and shorter cards
+- shorter How It Works strip
+- smaller, tighter project gallery
+- reduced About height
+- reduced FAQ whitespace
+- smaller consultation card and centered email fallback
+- denser footer
+- dedicated laptop-width tuning for 1000–1280px viewports
+
+Preserved:
+- clean photography
+- Drape Factory logo
+- favicon
+- WhatsApp +91 91087 76325
+- orders@thedrapefactory.in
+- enquiry functionality
 
 Deploy:
 - Build command: npm run build
