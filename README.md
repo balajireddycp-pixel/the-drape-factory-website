@@ -1,23 +1,17 @@
-# The Drape Factory — Public Website Build 4
+# The Drape Factory — Public Website Build 4.1
 
-This is a structural rebuild to match the approved reference layout rather than a CSS-only alignment patch.
+Reference-match rebuild focused on the approved compact editorial layout.
 
-Key changes:
-- Rebuilt the page structure to match the approved reference:
-  - left-copy / right-image hero
-  - four-benefit strip
-  - left collection intro + 2×2 collection cards
-  - single-row dark process section
-  - left project intro + three aligned project cards
-  - split About section
-  - split FAQ section
-  - centered two-column consultation card
-  - structured footer
-- Preserved current clean photography assets.
-- Preserved the Drape Factory logo and favicon.
-- Preserved WhatsApp +91 91087 76325 and orders@thedrapefactory.in.
-- Centered the email fallback under the WhatsApp CTA.
-- Added responsive tablet/mobile layout.
+Changes:
+- Reduced overall desktop content width for a denser, more premium composition.
+- Made the hero shorter and more compact.
+- Tightened navigation, benefit strip, collections, process, projects, about, FAQ, contact, and footer spacing.
+- Reduced oversized white gaps.
+- Matched collection and project card proportions more closely to the approved reference.
+- Preserved clean photography, logo, favicon, WhatsApp, email, and enquiry functionality.
+
+WhatsApp: +91 91087 76325
+Email: orders@thedrapefactory.in
 
 Deploy:
 - Build command: npm run build
