@@ -1,16 +1,19 @@
-# The Drape Factory — Public Website Build 3.5
+# The Drape Factory — Public Website Build 3.6
 
-Production polish build based on Build 3.4.
+Alignment refinement based on the approved Build 3.5 visual system.
 
 Changes:
-- Enlarged header logo and improved desktop navigation proportions.
-- Increased desktop content width and typography scale.
-- Refined spacing across hero, collections, process, projects, about, FAQ, contact and footer.
-- Preserved Build 3.4 clean photography and asset wiring.
-- Replaced the old browser-tab favicon with a favicon made from the actual Drape Factory curtain + sewing-machine logo.
-- Added favicon.ico, 32px PNG, 192px PNG and Apple touch icon.
-- WhatsApp: +91 91087 76325
-- Email: orders@thedrapefactory.in
+- Centered the email fallback beneath the WhatsApp enquiry CTA.
+- Tightened the header grid and used a cropped production logo asset so the logo reads larger without wasting header space.
+- Normalized left/right content guides across hero, collections, process, projects, about, FAQ, contact and footer.
+- Balanced hero text/image proportions.
+- Equalized project card widths and improved card baselines.
+- Refined About, FAQ and enquiry vertical alignment.
+- Improved footer column geometry.
+- Preserved Build 3.4/3.5 clean photography, favicon, WhatsApp, email and enquiry functionality.
+
+WhatsApp: +91 91087 76325
+Email: orders@thedrapefactory.in
 
 Deploy:
 - Build command: npm run build

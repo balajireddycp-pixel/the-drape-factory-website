@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-// Public Website Build 3.5 — Desktop Scale + Header + Favicon Finish
+// Public Website Build 3.6 — Alignment Refine + Centered Contact Fallback
 
 const collections = [
   { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces", tag: "Made to measure", image: "/images/curtains-clean-v34.webp" },
@@ -259,6 +259,144 @@ export default function App() {
           .brandLogo{width:142px;height:50px}
         }
 
+
+        /* BUILD 3.6 — alignment refinement */
+        .emailFallback{
+          grid-column:1/-1;
+          margin:0;
+          min-height:46px;
+          padding:10px 14px;
+          border-radius:12px;
+          background:#f2eee8;
+          color:#686d68;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          gap:9px;
+          text-align:center;
+          font-size:13px;
+          line-height:1.35;
+        }
+        .emailFallback a{color:#4b514d;text-decoration:none}
+        .emailFallback a:hover{text-decoration:underline}
+
+        /* keep every major section on the same left/right guide */
+        .heroGrid,.sectionHead,.aboutGrid,.faqWrap,.contactCard,.footerTop{position:relative}
+        .heroCopy,.aboutCopy,.faqTitle{min-width:0}
+        .sectionHead > *,.aboutGrid > *,.faqWrap > *,.contactCard > *{min-width:0}
+
+        @media(min-width:1100px){
+          .container{width:min(1320px,calc(100% - 72px))}
+
+          /* Header */
+          .nav{min-height:104px;grid-template-columns:170px 1fr auto;gap:40px}
+          .brand{display:flex;align-items:center;justify-content:flex-start}
+          .brandLogo{width:132px;height:auto;max-height:88px;object-fit:contain;object-position:left center}
+          .navLinks{justify-self:center;gap:38px}
+          .navCta{justify-self:end}
+
+          /* Hero */
+          .hero{padding:70px 0 46px}
+          .heroGrid{grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:68px;align-items:center}
+          .heroCopy{padding-right:18px}
+          h1{font-size:clamp(58px,5.2vw,82px);max-width:700px}
+          .heroLead{max-width:590px}
+          .heroVisual{min-height:610px}
+
+          .heroMeta{gap:24px;margin-top:32px}
+          .heroMeta > div{padding-right:16px}
+          .trustStrip{padding-top:24px}
+          .trustGrid{gap:18px}
+          .trustItem{padding:22px 24px;display:flex;flex-direction:column;justify-content:center}
+
+          /* shared section title geometry */
+          section{padding:86px 0}
+          .sectionHead{
+            grid-template-columns:minmax(0,.9fr) minmax(360px,.72fr);
+            gap:92px;
+            align-items:end;
+            margin-bottom:40px
+          }
+          .sectionHead p{max-width:500px;justify-self:end}
+
+          /* collections */
+          .collectionGrid{gap:20px}
+          .collectionCard{min-height:400px}
+          .collectionCard h3{font-size:34px}
+
+          /* process */
+          .process .sectionHead{grid-template-columns:minmax(0,.9fr) minmax(360px,.72fr)}
+          .processGrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+          .step{min-height:195px}
+          .stepNum{margin-bottom:28px}
+
+          /* projects */
+          .projectGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+          .projectCard{min-height:405px}
+          .projectInfo{width:calc(100% - 36px);max-width:none}
+
+          /* about */
+          #about{padding-top:88px;padding-bottom:82px}
+          .aboutGrid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:76px}
+          .aboutVisual{min-height:540px}
+          .aboutCopy h2{font-size:56px;max-width:650px}
+          .aboutCopy p{max-width:690px}
+          .aboutPoints{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+          .aboutPoint{min-height:52px;padding:14px 16px}
+
+          /* FAQ */
+          .faqWrap{grid-template-columns:minmax(0,.74fr) minmax(0,1.26fr);gap:88px}
+          .faqTitle{padding-top:0}
+          .faqTitle p{max-width:430px}
+          .faqItem{padding:18px 0}
+
+          /* enquiry */
+          .contact{padding-top:44px}
+          .contactCard{
+            grid-template-columns:minmax(0,.9fr) minmax(500px,1fr);
+            gap:78px;
+            padding:58px 62px;
+            align-items:center
+          }
+          .contactCard > div:first-child{max-width:560px}
+          .contactCard h2{font-size:54px}
+          .contactForm{width:100%;max-width:610px;justify-self:end;padding:24px}
+          .formGrid{gap:12px}
+          .submitBtn{min-height:48px}
+          .emailFallback{min-height:48px}
+
+          /* footer */
+          footer{padding-top:60px}
+          .footerTop{grid-template-columns:1.65fr .72fr .82fr 1.08fr;gap:56px}
+          .footerBrand{max-width:360px}
+          .footerLogo{width:132px;height:auto;max-height:96px}
+          .footerCol{padding-top:8px}
+        }
+
+        @media(min-width:901px) and (max-width:1099px){
+          .container{width:min(100% - 48px,1180px)}
+          .nav{grid-template-columns:150px 1fr auto;min-height:94px}
+          .brandLogo{width:116px;height:auto;max-height:78px}
+          .heroGrid{gap:48px}
+          .sectionHead{gap:54px}
+          .aboutGrid{gap:56px}
+          .faqWrap{gap:58px}
+          .contactCard{gap:52px}
+        }
+
+        @media(max-width:900px){
+          .brandLogo{width:110px;height:auto;max-height:72px}
+          .sectionHead p{justify-self:start}
+          .contactForm{width:100%;max-width:none}
+          .emailFallback{font-size:12.5px}
+        }
+
+        @media(max-width:620px){
+          .brandLogo{width:96px;height:auto;max-height:64px}
+          .emailFallback{min-height:44px;padding:9px 10px;gap:7px;flex-wrap:wrap}
+          .contactCard > div:first-child{text-align:left}
+        }
+
       `}</style>
 
       <div className="topNote"><div className="container topNoteInner">Custom curtains • Sheers • Blinds • Upholstery</div></div>
@@ -266,7 +404,7 @@ export default function App() {
       <header className="navWrap">
         <div className="container nav">
           <a href="#home" className="brand" aria-label="The Drape Factory home">
-            <img className="brandLogo" src="/images/logo.png" alt="The Drape Factory" />
+            <img className="brandLogo" src="/images/logo-cropped-v36.png" alt="The Drape Factory" />
           </a>
           <nav className={`navLinks ${menuOpen ? "open" : ""}`}>
             <a href="#collections" onClick={() => setMenuOpen(false)}>Collections</a>
@@ -385,7 +523,7 @@ export default function App() {
                 <div className="field"><label>Phone</label><input name="phone" autoComplete="tel" inputMode="tel" required placeholder="Mobile number" /></div>
                 <div className="field full"><label>Project type</label><input name="project" required placeholder="Curtains, sheers, blinds, full home..." /></div>
                 <div className="field full"><label>Message</label><textarea name="message" required placeholder="Tell us a little about your requirement" /></div>
-                <button className="submitBtn" type="submit">Send enquiry on WhatsApp</button><p className="formStatus">Prefer email? <a href={`mailto:${email}`}><strong>{email}</strong></a></p>{formStatus && <p className="formStatus" role="status">{formStatus}</p>}
+                <button className="submitBtn" type="submit">Send enquiry on WhatsApp</button><p className="emailFallback"><span aria-hidden="true">✉</span><span>Prefer email? <a href={`mailto:${email}`}><strong>{email}</strong></a></span></p>{formStatus && <p className="formStatus" role="status">{formStatus}</p>}
               </div>
             </form>
           </div>
@@ -395,7 +533,7 @@ export default function App() {
       <footer>
         <div className="container">
           <div className="footerTop">
-            <div className="footerBrand"><div className="brand"><img className="footerLogo" src="/images/logo.png" alt="The Drape Factory" /></div><p>Custom window furnishings and interior textiles designed to bring the room together.</p></div>
+            <div className="footerBrand"><div className="brand"><img className="footerLogo" src="/images/logo-cropped-v36.png" alt="The Drape Factory" /></div><p>Custom window furnishings and interior textiles designed to bring the room together.</p></div>
             <div className="footerCol"><h4>Explore</h4><a href="#collections">Collections</a><a href="#projects">Projects</a><a href="#about">About</a></div>
             <div className="footerCol"><h4>Services</h4><a href="#contact">Consultation</a><a href="#contact">Measurement</a><a href="#contact">Installation</a></div>
             <div className="footerCol"><h4>Contact</h4><a href={whatsappUrl} target="_blank" rel="noreferrer">+91 91087 76325</a><a href={`mailto:${email}`}>{email}</a></div>
