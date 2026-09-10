@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-// Public Website Build 4.3 — Benefit Strip Reference Match
+// Public Website Build 4.4 — CSS Consolidation + Global Scale Recalibration
 
 const collections = [
   { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces.", tag: "Made to measure", image: "/images/curtains-clean-v34.webp" },
@@ -674,84 +674,109 @@ export default function App() {
           .footerBottom{flex-direction:column;align-items:flex-start}
         }
 
-  
-        /* BUILD 4.2 — reference-density desktop composition */
+
+
+        /* BUILD 4.4 — consolidated production CSS */
         @media(min-width:1000px){
-          .container{width:min(1180px,calc(100% - 64px))}
+          .container{width:min(1220px,calc(100% - 56px));margin:0 auto}
 
-          /* header: compact, reference-like */
-          .topbar .container{min-height:24px}
+          /* header */
+          .topbar .container{min-height:26px}
           .nav{
-            min-height:70px;
-            grid-template-columns:142px 1fr auto;
-            gap:26px;
-          }
-          .brand img{width:104px}
-          .navlinks{gap:32px;font-size:11px}
-          .whatsapp{padding:9px 16px;font-size:10px}
-
-          /* hero: shorter and denser */
-          .hero{padding:18px 0 0}
-          .heroGrid{
-            grid-template-columns:.80fr 1.20fr;
+            min-height:78px;
+            grid-template-columns:148px 1fr auto;
             gap:30px;
+          }
+          .brand img{width:112px}
+          .navlinks{gap:34px;font-size:12px}
+          .whatsapp{padding:10px 16px;font-size:10.5px}
+
+          /* hero */
+          .hero{padding:22px 0 0}
+          .heroGrid{
+            grid-template-columns:.82fr 1.18fr;
+            gap:34px;
             align-items:center;
           }
-          .heroCopy{padding:22px 0 16px}
+          .heroCopy{padding:28px 0 20px}
+          .eyebrow{font-size:9px;margin-bottom:12px}
           h1{
-            font-size:clamp(46px,4.7vw,64px);
+            font-size:58px;
+            line-height:.96;
             max-width:430px;
-            margin-bottom:14px;
+            margin-bottom:16px;
           }
           .heroLead{
-            font-size:11.5px;
-            line-height:1.56;
-            max-width:405px;
-            margin-bottom:17px;
+            max-width:420px;
+            font-size:12.5px;
+            line-height:1.6;
+            margin-bottom:18px;
           }
           .btnPrimary,.btnSecondary{
-            min-height:35px;
-            padding:0 15px;
-            font-size:9.5px;
+            min-height:38px;
+            padding:0 16px;
+            font-size:10px;
           }
           .heroImage{
-            min-height:330px;
-            max-height:330px;
-            border-radius:17px;
+            min-height:350px;
+            max-height:350px;
+            border-radius:18px;
           }
           .heroBadge{
-            left:12px;
-            bottom:12px;
-            width:184px;
-            padding:9px 10px;
+            left:14px;
+            bottom:14px;
+            width:190px;
+            padding:10px 11px;
             font-size:8.5px;
           }
           .heroBadge strong{font-size:9.5px}
 
-          .benefitGrid{min-height:66px}
-          .benefit{padding:12px 13px;gap:9px}
-          .benefitIcon{width:28px;height:28px;font-size:13px;border-radius:8px}
-          .benefit strong{font-size:10.5px}
-          .benefit span{font-size:9px}
+          /* benefits */
+          .benefits{
+            border-bottom:0;
+            padding-top:20px;
+            padding-bottom:20px;
+          }
+          .benefitGrid{
+            display:grid;
+            grid-template-columns:repeat(4,minmax(0,1fr));
+            gap:34px;
+            min-height:0;
+            align-items:center;
+          }
+          .benefit{
+            display:grid;
+            grid-template-columns:42px minmax(0,1fr);
+            gap:12px;
+            align-items:center;
+            padding:0;
+            border:0;
+          }
+          .benefitIcon{
+            width:42px;
+            height:42px;
+            border:0;
+            border-radius:0;
+            background:transparent;
+            color:var(--accent);
+            display:grid;
+            place-items:center;
+          }
+          .benefitIcon svg{width:36px;height:36px}
+          .benefit strong{font-size:11px;margin:0 0 3px}
+          .benefit span{font-size:9.5px;line-height:1.35}
 
-          /* section rhythm */
-          section{padding:54px 0}
+          section{padding:48px 0}
 
           /* collections */
           .collectionsLayout{
-            grid-template-columns:205px 1fr;
+            grid-template-columns:210px 1fr;
             gap:24px;
           }
           .sideIntro{padding-top:10px}
-          .sideIntro h2{
-            font-size:38px;
-            margin-bottom:12px;
-          }
-          .sideIntro p{
-            font-size:10px;
-            line-height:1.55;
-          }
-          .accentLine{width:38px;margin:14px 0 16px}
+          .sideIntro h2{font-size:37px;margin-bottom:12px}
+          .sideIntro p{font-size:10px;line-height:1.5}
+          .accentLine{width:40px;margin:14px 0 16px}
           .collectionGrid{gap:10px}
           .collectionCard{
             min-height:205px;
@@ -760,225 +785,122 @@ export default function App() {
           }
           .collectionTag{left:11px;top:11px;font-size:7px;padding:5px 7px}
           .collectionCard h3{font-size:22px}
-          .collectionCard p{font-size:9px;max-width:225px}
+          .collectionCard p{font-size:9px;max-width:230px}
           .circleArrow{width:29px;height:29px;font-size:13px}
 
-          /* process strip */
-          .process{padding:34px 0}
+          /* process */
+          .process{padding:32px 0}
           .processGrid{
-            grid-template-columns:205px repeat(4,1fr);
+            grid-template-columns:205px repeat(4,minmax(0,1fr));
             gap:20px;
           }
-          .processTitle h2{font-size:32px}
-          .step{min-height:112px}
+          .processTitle h2{font-size:31px}
+          .step{min-height:108px}
           .stepNum{
-            width:29px;height:29px;
-            margin-top:-15px;
-            margin-bottom:14px;
+            width:28px;height:28px;
+            margin-top:-14px;
+            margin-bottom:13px;
             font-size:9px;
           }
-          .step h3{font-size:16px;margin-bottom:5px}
-          .step p{font-size:9px;line-height:1.45}
+          .step h3{font-size:15px;margin-bottom:5px}
+          .step p{font-size:8.8px;line-height:1.42}
 
           /* projects */
           .projectsLayout{
             grid-template-columns:190px 1fr;
             gap:24px;
           }
-          .projectsIntro h2{font-size:34px;margin-bottom:9px}
-          .projectsIntro p{font-size:9.5px;line-height:1.45;margin-bottom:13px}
+          .projectsIntro h2{font-size:33px;margin-bottom:9px}
+          .projectsIntro p{font-size:9.4px;line-height:1.45;margin-bottom:12px}
           .outlineBtn{padding:8px 12px;font-size:9px}
           .projectGrid{gap:9px}
-          .projectCard{min-height:210px;border-radius:12px}
-          .projectInfo{
-            left:8px;right:8px;bottom:8px;
-            padding:8px 9px;
-            border-radius:8px;
-          }
-          .projectInfo strong{font-size:9.5px}
-          .projectInfo span{font-size:8px}
+          .projectCard{min-height:205px;border-radius:12px}
+          .projectInfo{left:8px;right:8px;bottom:8px;padding:8px 9px}
+          .projectInfo strong{font-size:9.3px}
+          .projectInfo span{font-size:7.8px}
 
           /* about */
+          #about{padding-top:42px;padding-bottom:42px}
           .aboutLayout{
-            grid-template-columns:.78fr 1.22fr;
+            grid-template-columns:.80fr 1.20fr;
             gap:34px;
           }
           .aboutImage{
-            min-height:315px;
-            max-height:315px;
-            border-radius:14px;
+            min-height:310px;
+            max-height:310px;
           }
-          .aboutCopy h2{
-            font-size:40px;
-            margin-bottom:11px;
-            max-width:650px;
-          }
-          .aboutCopy p{
-            font-size:10px;
-            line-height:1.5;
-            margin-bottom:9px;
-          }
-          .aboutPoints{gap:8px;margin-top:13px}
-          .aboutPoint{
-            min-height:38px;
-            padding:8px 11px;
-            font-size:9px;
-          }
+          .aboutCopy h2{font-size:39px;margin-bottom:10px}
+          .aboutCopy p{font-size:9.7px;line-height:1.45;margin-bottom:8px}
+          .aboutPoints{gap:8px;margin-top:12px}
+          .aboutPoint{min-height:36px;padding:8px 10px;font-size:8.8px}
 
           /* FAQ */
           .faqLayout{
-            grid-template-columns:.70fr 1.30fr;
-            gap:58px;
+            grid-template-columns:.72fr 1.28fr;
+            gap:56px;
           }
-          .faqIntro h2{font-size:34px}
-          .faqIntro p{
-            max-width:300px;
-            font-size:9.5px;
-            line-height:1.45;
-          }
-          .faqButton{
-            padding:12px 0;
-            font-size:10px;
-          }
-          .faqAnswer{
-            font-size:9px;
-            line-height:1.45;
-            padding-bottom:10px;
-          }
+          .faqIntro h2{font-size:33px;margin-bottom:8px}
+          .faqIntro p{font-size:9.3px;line-height:1.42;max-width:290px}
+          .faqButton{padding:10px 0;font-size:9.7px}
+          .faqAnswer{font-size:8.7px;line-height:1.42;padding-bottom:9px}
 
-          /* enquiry card */
-          .contact{padding-top:18px}
+          /* contact */
+          .contact{padding-top:18px;padding-bottom:44px}
           .contactCard{
-            grid-template-columns:.86fr 1.14fr;
-            gap:44px;
-            padding:34px 38px;
+            grid-template-columns:.88fr 1.12fr;
+            gap:40px;
+            padding:32px 36px;
             border-radius:18px;
           }
-          .contactCopy{max-width:380px}
-          .contactCopy h2{font-size:38px;margin-bottom:9px}
-          .contactCopy p{font-size:9.5px;line-height:1.5}
-          .contactForm{
-            max-width:560px;
-            justify-self:end;
-            padding:14px;
-          }
+          .contactCopy{max-width:360px}
+          .contactCopy h2{font-size:36px;margin-bottom:8px}
+          .contactCopy p{font-size:9.3px;line-height:1.45}
+          .contactForm{max-width:520px;padding:13px}
           .formGrid{gap:7px}
-          .field label{font-size:7.5px}
-          .field input,.field textarea{
-            padding:8px 9px;
-            font-size:9px;
-          }
-          .field textarea{min-height:58px}
-          .submitBtn{min-height:37px;font-size:9px}
-          .emailFallback{
-            min-height:32px;
-            font-size:8.5px;
-            padding:7px 9px;
-          }
+          .field label{font-size:7.3px}
+          .field input,.field textarea{padding:7px 8px;font-size:8.8px}
+          .field textarea{min-height:54px}
+          .submitBtn{min-height:36px;font-size:9px}
+          .emailFallback{min-height:31px;font-size:8.3px;padding:7px 8px}
 
           /* footer */
-          footer{
-            margin-top:52px;
-            padding:36px 0 18px;
-          }
+          footer{margin-top:0;padding:32px 0 16px}
           .footerGrid{
             grid-template-columns:1.45fr .72fr .78fr 1fr;
-            gap:38px;
+            gap:36px;
           }
-          .footerLogo{width:104px;margin-bottom:9px}
-          .footerBrand p{font-size:9px;max-width:240px}
-          .footerCol h4{font-size:8px;margin-bottom:9px}
-          .footerCol a{font-size:8.5px;margin-bottom:5px}
-          .footerBottom{
-            margin-top:25px;
-            padding-top:13px;
-            font-size:8px;
-          }
+          .footerLogo{width:106px;margin-bottom:8px}
+          .footerBrand p{font-size:8.8px;max-width:240px}
+          .footerCol h4{font-size:7.8px;margin-bottom:8px}
+          .footerCol a{font-size:8.3px;margin-bottom:5px}
+          .footerBottom{margin-top:22px;padding-top:12px;font-size:7.8px}
         }
 
-        /* preserve compact editorial density on common laptop widths */
         @media(min-width:1000px) and (max-width:1280px){
-          .container{width:calc(100% - 42px)}
-          .heroGrid{gap:24px}
-          .heroImage{min-height:310px;max-height:310px}
-          .collectionsLayout{grid-template-columns:190px 1fr}
-          .processGrid{grid-template-columns:190px repeat(4,1fr)}
+          .container{width:calc(100% - 44px)}
+          h1{font-size:54px}
+          .heroImage{min-height:330px;max-height:330px}
+          .collectionsLayout{grid-template-columns:195px 1fr}
+          .processGrid{grid-template-columns:192px repeat(4,minmax(0,1fr))}
           .projectsLayout{grid-template-columns:178px 1fr}
-        }
-
-
-        /* BUILD 4.3 — approved benefit strip */
-        .benefits{
-          border-bottom:0 !important;
-          padding-top:18px;
-          padding-bottom:18px;
-        }
-        .benefitGrid{
-          display:grid;
-          grid-template-columns:repeat(4,minmax(0,1fr));
-          gap:34px;
-          min-height:0 !important;
-          align-items:center;
-        }
-        .benefit{
-          border:0 !important;
-          padding:0 !important;
-          display:grid;
-          grid-template-columns:46px minmax(0,1fr);
-          gap:14px !important;
-          align-items:center;
-          min-width:0;
-        }
-        .benefitIcon{
-          width:46px !important;
-          height:46px !important;
-          border:0 !important;
-          border-radius:0 !important;
-          display:grid;
-          place-items:center;
-          color:var(--accent);
-          background:transparent !important;
-          flex:0 0 auto;
-        }
-        .benefitIcon svg{display:block;width:40px;height:40px}
-        .benefit strong{
-          display:block;
-          margin:0 0 4px !important;
-          font-size:12px !important;
-          line-height:1.2;
-          font-weight:800;
-          color:var(--ink);
-        }
-        .benefit span{
-          display:block;
-          margin:0;
-          color:var(--muted);
-          font-size:10px !important;
-          line-height:1.35 !important;
-        }
-
-        @media(min-width:1000px){
-          .benefits{padding-top:19px;padding-bottom:20px}
-          .benefitGrid{gap:40px}
         }
 
         @media(max-width:980px){
           .benefitGrid{
             grid-template-columns:repeat(2,minmax(0,1fr));
-            gap:22px 28px;
+            gap:22px 26px;
           }
           .benefit{
-            border:0 !important;
-            padding:0 !important;
+            border:0!important;
+            padding:0!important;
           }
         }
 
         @media(max-width:600px){
-          .benefits{padding-top:16px;padding-bottom:16px}
           .benefitGrid{grid-template-columns:1fr;gap:18px}
-          .benefit{grid-template-columns:42px 1fr;gap:12px !important}
-          .benefitIcon{width:42px !important;height:42px !important}
-          .benefitIcon svg{width:36px;height:36px}
+          .benefit{grid-template-columns:40px 1fr;gap:11px}
+          .benefitIcon{width:40px;height:40px}
+          .benefitIcon svg{width:34px;height:34px}
         }
 
       `}</style>

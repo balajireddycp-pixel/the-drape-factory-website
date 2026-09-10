@@ -1,14 +1,18 @@
-# The Drape Factory — Public Website Build 4.3
+# The Drape Factory — Public Website Build 4.4
 
-Targeted reference correction for the four-benefit strip.
+Clean CSS consolidation build.
 
-Fixes:
-- Removed the table-like vertical dividers.
-- Removed the full-width bottom rule from the benefit strip.
-- Replaced placeholder Unicode symbols with proper custom line SVG icons.
-- Enlarged and aligned icons to match the approved premium reference.
-- Rebalanced icon/text spacing and typography.
-- Preserved the rest of Build 4.2 unchanged.
+This version removes the layered desktop override strategy that caused the deployed layout to diverge from the approved reference.
+
+What changed:
+- consolidated desktop CSS into one production block
+- recalibrated global typography and spacing
+- corrected hero scale and image ratio
+- corrected benefit strip so custom SVG icons render at the intended size
+- removed table-like benefit dividers in the winning CSS layer
+- tightened Collections, Process, Projects, About, FAQ, Contact and Footer
+- reduced excessive vertical whitespace
+- preserved current photography, logo, favicon, WhatsApp, email and enquiry flow
 
 Deploy:
 - Build command: npm run build
