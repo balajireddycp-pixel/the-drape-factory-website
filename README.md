@@ -1,44 +1,19 @@
-# The Drape Factory — Public Website Build 1
+# The Drape Factory — Public Website Build 2
 
-Deployment-ready React + Vite package for the public website.
+Production-polish pass for the public website.
 
-## Local preview
-
-```bash
-npm install
-npm run dev
+## Build
 ```
-
-## Production build
-
-```bash
 npm install
 npm run build
 ```
+Output: `dist/`
 
-The compiled website is written to `dist/`.
-
-## Cloudflare deployment
-
-Create a **separate** Cloudflare project for the public website. Do not replace the existing ERP project.
-
-Recommended settings:
-
-- Framework preset: Vite
+## Cloudflare
 - Build command: `npm run build`
-- Build output directory: `dist`
-- Production domain: `thedrapefactory.in`
-- `www.thedrapefactory.in`: redirect to `https://thedrapefactory.in`
-- Keep ERP at `erp.thedrapefactory.in`
+- Root/path: `/`
+- Public domain after approval: `thedrapefactory.in`
+- Keep ERP on `erp.thedrapefactory.in`
 
-## Project structure
-
-- `src/App.jsx` — website UI
-- `src/main.jsx` — React entry point
-- `index.html` — HTML shell and metadata
-- `vite.config.js` — Vite configuration
-- `package.json` — dependencies and scripts
-
-## Important
-
-Build 1 intentionally does not invent phone numbers, addresses, pricing, or service-area claims. Replace placeholders/content only with verified business information.
+## Before public-domain launch
+The consultation form intentionally does not send data to a third party yet. Connect it only after the verified business email/WhatsApp destination is supplied. Replace art-directed placeholder project visuals with owned project photography when available.

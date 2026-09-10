@@ -20,11 +20,12 @@ function ArrowIcon() {
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFaq, setActiveFaq] = useState(0);
+  const [formStatus, setFormStatus] = useState("");
 
   const faq = useMemo(() => [
-    ["Do you provide custom sizing?", "Yes. The website is structured around a made-to-measure consultation flow, so final dimensions, fabric choice and installation can be confirmed before order."],
-    ["Can I request a home consultation?", "Yes. The enquiry section is designed to capture consultation requests and can later be connected to WhatsApp, phone, email or a booking workflow."],
-    ["Do you handle installation?", "The site can present measurement, fabrication and installation as one complete service journey. We can adjust the wording to match your exact operating model."],
+    ["Do you provide custom sizing?", "Yes. Every treatment is planned around the window, room proportions, fabric choice and required finish before production."],
+    ["Can I request a home consultation?", "Yes. Send your project details through the consultation form and the request can be followed up using your preferred contact details."],
+    ["Do you handle installation?", "Measurement, fabrication and installation are presented as one connected service journey, subject to confirmation for your project."],
   ], []);
 
   return (
@@ -130,6 +131,24 @@ export default function App() {
 
         footer{padding:52px 0 34px}.footerTop{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:30px;padding-bottom:34px;border-bottom:1px solid var(--line)}.footerBrand p{color:var(--muted);line-height:1.7;max-width:360px}.footerCol h4{font-size:12px;text-transform:uppercase;letter-spacing:.09em;margin:0 0 14px}.footerCol a{display:block;color:#666b67;font-size:13px;margin:9px 0}.footerBottom{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-top:20px;color:#868984;font-size:12px}
 
+        /* BUILD 2 — production polish */
+        .navWrap{box-shadow:0 1px 0 rgba(31,35,33,.03)}
+        .brand{font-weight:500}.brandMark{background:#fff}
+        .hero{padding:72px 0 46px}.heroLead{max-width:570px}
+        .heroVisual{background:radial-gradient(circle at 72% 15%,rgba(255,255,255,.95),rgba(255,255,255,0) 24%),linear-gradient(115deg,#bfae9b 0 18%,#eee6dc 18% 48%,#aa917d 48% 61%,#ddd1c4 61% 100%)}
+        .heroVisual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(54,43,34,.08));pointer-events:none}
+        .collectionCard,.projectCard{isolation:isolate}
+        .collectionCard:after,.projectCard:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 78% 20%,rgba(255,255,255,.62),transparent 26%)}
+        .collectionCard h3,.collectionCard p,.collectionCard .tag{position:relative;z-index:2}
+        .projectInfo{border:1px solid rgba(255,255,255,.62)}
+        .primaryBtn,.navCta,.submitBtn{transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+        .primaryBtn:hover,.navCta:hover,.submitBtn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(31,35,33,.14)}
+        .secondaryBtn:hover{border-color:#bcae9f;background:#faf7f2}
+        .contactForm:focus-within{box-shadow:0 22px 60px rgba(38,33,28,.12)}
+        .field input:focus,.field textarea:focus{border-color:#9f8169;box-shadow:0 0 0 3px rgba(126,92,67,.08)}
+        .formStatus{grid-column:1/-1;margin:0;padding:11px 13px;border-radius:12px;background:#f2eee8;color:#4d524e;font-size:13px;line-height:1.5}
+        .footerBottom a{color:inherit}
+        @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
         @media(max-width:900px){
           .navLinks{display:none}.menuBtn{display:block}.navLinks.open{display:flex;position:absolute;left:20px;right:20px;top:72px;flex-direction:column;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
           .heroGrid,.aboutGrid,.faqWrap,.contactCard{grid-template-columns:1fr}.heroVisual{min-height:520px}.trustGrid,.processGrid{grid-template-columns:1fr 1fr}.projectGrid{grid-template-columns:1fr 1fr}.projectCard:first-child{grid-column:1/-1}.footerTop{grid-template-columns:1fr 1fr}
@@ -229,7 +248,7 @@ export default function App() {
           <div className="container">
             <div className="sectionHead">
               <div><div className="eyebrow">Project inspiration</div><h2>Designed to belong in the room.</h2></div>
-              <p>This section is ready for real project photography. For now, the cards establish the final gallery layout and content hierarchy.</p>
+              <p>A considered edit of window treatments for calm, contemporary interiors. Real completed-project photography can replace these art-directed studies as your portfolio grows.</p>
             </div>
             <div className="projectGrid">
               {projects.map((p) => <article className="projectCard" key={p.name}><div className="projectInfo"><strong>{p.name}</strong><span>{p.type} • {p.tone}</span></div></article>)}
@@ -261,14 +280,14 @@ export default function App() {
 
         <section id="contact" className="contact">
           <div className="container contactCard">
-            <div><div className="eyebrow">Start your project</div><h2>Tell us about your windows.</h2><p>Share the room, approximate requirement and preferred style. This form can later connect directly to WhatsApp, email, your CRM or a consultation booking workflow.</p></div>
-            <form className="contactForm" onSubmit={(e) => e.preventDefault()}>
+            <div><div className="eyebrow">Start your project</div><h2>Tell us about your windows.</h2><p>Share the room, approximate requirement and preferred style, and we’ll use it to prepare your consultation request.</p></div>
+            <form className="contactForm" onSubmit={(e) => { e.preventDefault(); setFormStatus("Thanks — your consultation request is ready. We’ll connect this form to your confirmed business inbox or WhatsApp before the public domain goes live."); }}>
               <div className="formGrid">
-                <div className="field"><label>Name</label><input placeholder="Your name" /></div>
-                <div className="field"><label>Phone</label><input placeholder="Mobile number" /></div>
-                <div className="field full"><label>Project type</label><input placeholder="Curtains, sheers, blinds, full home..." /></div>
-                <div className="field full"><label>Message</label><textarea placeholder="Tell us a little about your requirement" /></div>
-                <button className="submitBtn" type="submit">Request consultation</button>
+                <div className="field"><label>Name</label><input name="name" autoComplete="name" required placeholder="Your name" /></div>
+                <div className="field"><label>Phone</label><input name="phone" autoComplete="tel" inputMode="tel" required placeholder="Mobile number" /></div>
+                <div className="field full"><label>Project type</label><input name="project" required placeholder="Curtains, sheers, blinds, full home..." /></div>
+                <div className="field full"><label>Message</label><textarea name="message" required placeholder="Tell us a little about your requirement" /></div>
+                <button className="submitBtn" type="submit">Request consultation</button>{formStatus && <p className="formStatus" role="status">{formStatus}</p>}
               </div>
             </form>
           </div>
