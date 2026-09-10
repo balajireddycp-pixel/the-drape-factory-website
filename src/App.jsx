@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-// Public Website Build 3.4 — Asset Wiring + Alignment Fix
+// Public Website Build 3.5 — Desktop Scale + Header + Favicon Finish
 
 const collections = [
   { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces", tag: "Made to measure", image: "/images/curtains-clean-v34.webp" },
@@ -201,6 +201,64 @@ export default function App() {
         @media(max-width:620px){
           .container{width:min(100% - 24px,1180px)}.hero{padding-top:34px}.heroGrid{gap:30px}.heroVisual{min-height:430px;border-radius:26px}.heroMeta{gap:16px;flex-wrap:wrap}.trustGrid,.collectionGrid,.processGrid,.projectGrid,.aboutPoints,.formGrid{grid-template-columns:1fr}.projectCard:first-child{grid-column:auto}.sectionHead{align-items:flex-start;flex-direction:column}.contactCard{padding:28px}.contactCard h2,.aboutCopy h2{font-size:40px}.field.full,.submitBtn{grid-column:auto}.footerTop{grid-template-columns:1fr}.footerBottom{align-items:flex-start;flex-direction:column}
         }
+
+        /* BUILD 3.5 — desktop scale + header finish */
+        @media(min-width:1100px){
+          .container{width:min(1360px,calc(100% - 64px))}
+          .nav{min-height:94px;grid-template-columns:250px 1fr auto;gap:34px}
+          .brandLogo{width:232px;height:78px}
+          .navLinks{gap:34px;font-size:15px}
+          .navCta{padding:13px 20px;font-size:13px}
+
+          .hero{padding:72px 0 42px}
+          .heroGrid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:72px}
+          h1{font-size:clamp(58px,5.6vw,90px);max-width:760px}
+          .heroLead{font-size:19px;max-width:640px}
+          .heroVisual{min-height:640px;border-radius:38px}
+
+          .trustGrid{gap:16px}
+          .trustItem{padding:22px}
+          section{padding:90px 0}
+          .sectionHead{grid-template-columns:minmax(0,1fr) minmax(360px,520px);gap:76px;margin-bottom:42px}
+          .sectionHead h2{font-size:clamp(40px,3.8vw,58px)}
+
+          .collectionGrid{gap:22px}
+          .collectionCard{min-height:420px;padding:30px}
+          .collectionCard h3{font-size:36px}
+
+          .processGrid{gap:32px}
+          .step{min-height:220px}
+          .step h3{font-size:21px}
+
+          .projectGrid{gap:22px}
+          .projectCard{min-height:420px}
+          .projectInfo{width:min(92%,320px)}
+
+          .aboutGrid{gap:84px}
+          .aboutVisual{min-height:560px}
+          .aboutCopy h2{font-size:58px}
+
+          .faqWrap{gap:96px}
+          .contactCard{grid-template-columns:minmax(0,.92fr) minmax(460px,1fr);gap:82px;padding:62px 66px}
+          .contactCard h2{font-size:56px}
+
+          footer{padding-top:64px}
+          .footerLogo{width:220px;height:98px}
+          .footerTop{grid-template-columns:1.9fr .72fr .82fr 1.06fr;gap:62px}
+        }
+
+        @media(min-width:901px) and (max-width:1099px){
+          .brandLogo{width:184px;height:62px}
+          .nav{grid-template-columns:205px 1fr auto}
+        }
+
+        @media(max-width:900px){
+          .brandLogo{width:164px;height:56px}
+        }
+        @media(max-width:620px){
+          .brandLogo{width:142px;height:50px}
+        }
+
       `}</style>
 
       <div className="topNote"><div className="container topNoteInner">Custom curtains • Sheers • Blinds • Upholstery</div></div>
