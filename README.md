@@ -1,19 +1,23 @@
-# The Drape Factory — Public Website Build 3.6
+# The Drape Factory — Public Website Build 4
 
-Alignment refinement based on the approved Build 3.5 visual system.
+This is a structural rebuild to match the approved reference layout rather than a CSS-only alignment patch.
 
-Changes:
-- Centered the email fallback beneath the WhatsApp enquiry CTA.
-- Tightened the header grid and used a cropped production logo asset so the logo reads larger without wasting header space.
-- Normalized left/right content guides across hero, collections, process, projects, about, FAQ, contact and footer.
-- Balanced hero text/image proportions.
-- Equalized project card widths and improved card baselines.
-- Refined About, FAQ and enquiry vertical alignment.
-- Improved footer column geometry.
-- Preserved Build 3.4/3.5 clean photography, favicon, WhatsApp, email and enquiry functionality.
-
-WhatsApp: +91 91087 76325
-Email: orders@thedrapefactory.in
+Key changes:
+- Rebuilt the page structure to match the approved reference:
+  - left-copy / right-image hero
+  - four-benefit strip
+  - left collection intro + 2×2 collection cards
+  - single-row dark process section
+  - left project intro + three aligned project cards
+  - split About section
+  - split FAQ section
+  - centered two-column consultation card
+  - structured footer
+- Preserved current clean photography assets.
+- Preserved the Drape Factory logo and favicon.
+- Preserved WhatsApp +91 91087 76325 and orders@thedrapefactory.in.
+- Centered the email fallback under the WhatsApp CTA.
+- Added responsive tablet/mobile layout.
 
 Deploy:
 - Build command: npm run build
