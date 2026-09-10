@@ -1,19 +1,14 @@
-# The Drape Factory — Public Website Build 2
+# The Drape Factory — Public Website Build 3
 
-Production-polish pass for the public website.
+Production-polish build with generated interior imagery and verified customer contact integration.
 
-## Build
-```
-npm install
-npm run build
-```
-Output: `dist/`
+## Contact
+- WhatsApp / Mobile: +91 91087 76325
+- Email: orders@thedrapefactory.in
 
-## Cloudflare
+## Deploy
 - Build command: `npm run build`
-- Root/path: `/`
-- Public domain after approval: `thedrapefactory.in`
-- Keep ERP on `erp.thedrapefactory.in`
+- Static output: `dist`
+- Cloudflare Worker/Pages project: `the-drape-factory-website`
 
-## Before public-domain launch
-The consultation form intentionally does not send data to a third party yet. Connect it only after the verified business email/WhatsApp destination is supplied. Replace art-directed placeholder project visuals with owned project photography when available.
+The enquiry form opens WhatsApp with a structured pre-filled message. Email is available as a direct fallback.

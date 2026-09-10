@@ -1,16 +1,16 @@
 import React, { useMemo, useState } from "react";
 
 const collections = [
-  { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces", tag: "Made to measure" },
-  { title: "Sheers", subtitle: "Soft daylight, layered privacy and an elegant finish", tag: "Light & airy" },
-  { title: "Blinds", subtitle: "Clean, functional window solutions for modern interiors", tag: "Modern control" },
-  { title: "Upholstery", subtitle: "Coordinated fabrics for sofas, chairs and interior accents", tag: "Complete the room" },
+  { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces", tag: "Made to measure", image: "/images/curtains.jpg" },
+  { title: "Sheers", subtitle: "Soft daylight, layered privacy and an elegant finish", tag: "Light & airy", image: "/images/sheers.jpg" },
+  { title: "Blinds", subtitle: "Clean, functional window solutions for modern interiors", tag: "Modern control", image: "/images/blinds.jpg" },
+  { title: "Upholstery", subtitle: "Coordinated fabrics for sofas, chairs and interior accents", tag: "Complete the room", image: "/images/upholstery.jpg" },
 ];
 
 const projects = [
-  { name: "Warm Minimal Living", type: "Curtains + Sheers", tone: "Sand / Ivory" },
-  { name: "Contemporary Bedroom", type: "Blackout Curtains", tone: "Taupe / Linen" },
-  { name: "Soft Daylight Dining", type: "Sheer Drapes", tone: "Pearl / White" },
+  { name: "Warm Minimal Living", type: "Curtains + Sheers", tone: "Sand / Ivory", image: "/images/project-living.jpg" },
+  { name: "Contemporary Bedroom", type: "Blackout Curtains", tone: "Taupe / Linen", image: "/images/project-bedroom.jpg" },
+  { name: "Soft Daylight Dining", type: "Sheer Drapes", tone: "Pearl / White", image: "/images/project-dining.jpg" },
 ];
 
 function ArrowIcon() {
@@ -21,6 +21,8 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFaq, setActiveFaq] = useState(0);
   const [formStatus, setFormStatus] = useState("");
+  const whatsappUrl = "https://wa.me/919108776325";
+  const email = "orders@thedrapefactory.in";
 
   const faq = useMemo(() => [
     ["Do you provide custom sizing?", "Yes. Every treatment is planned around the window, room proportions, fabric choice and required finish before production."],
@@ -71,7 +73,7 @@ export default function App() {
         .heroMeta{display:flex;gap:28px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);color:#5e625f;font-size:13px}
         .heroMeta strong{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
 
-        .heroVisual{position:relative;min-height:620px;border-radius:36px;overflow:hidden;background:
+        .heroVisual{position:relative;min-height:620px;border-radius:36px;overflow:hidden;background-image:linear-gradient(180deg,rgba(20,18,16,.02),rgba(20,18,16,.16)),url("/images/hero.jpg");background-size:cover;background-position:center;/* fallback */background-color:#ddd;background:
           radial-gradient(circle at 70% 16%,rgba(255,255,255,.9),rgba(255,255,255,0) 25%),
           linear-gradient(115deg,#cdbfae 0 20%,#f4efe8 20% 48%,#bda893 48% 61%,#ded3c6 61% 100%);box-shadow:var(--shadow)}
         .heroVisual:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.0) 0 42px,rgba(255,255,255,.16) 42px 52px,rgba(0,0,0,.025) 52px 58px);mix-blend-mode:soft-light}
@@ -135,11 +137,11 @@ export default function App() {
         .navWrap{box-shadow:0 1px 0 rgba(31,35,33,.03)}
         .brand{font-weight:500}.brandMark{background:#fff}
         .hero{padding:72px 0 46px}.heroLead{max-width:570px}
-        .heroVisual{background:radial-gradient(circle at 72% 15%,rgba(255,255,255,.95),rgba(255,255,255,0) 24%),linear-gradient(115deg,#bfae9b 0 18%,#eee6dc 18% 48%,#aa917d 48% 61%,#ddd1c4 61% 100%)}
+        .heroVisual{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.12)),url("/images/hero.jpg");background-size:cover;background-position:center}
         .heroVisual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(54,43,34,.08));pointer-events:none}
         .collectionCard,.projectCard{isolation:isolate}
         .collectionCard:after,.projectCard:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 78% 20%,rgba(255,255,255,.62),transparent 26%)}
-        .collectionCard h3,.collectionCard p,.collectionCard .tag{position:relative;z-index:2}
+        .collectionCard h3,.collectionCard p,.collectionCard .tag{position:relative;z-index:2}.collectionCard{background-size:cover!important;background-position:center!important}.collectionCard:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.03) 25%,rgba(20,18,16,.72) 100%);z-index:1}.collectionCard h3,.collectionCard p{color:#fff}.collectionCard .tag{background:rgba(255,255,255,.9)}.fabricFold{display:none}.projectCard{background-size:cover!important;background-position:center!important}.aboutVisual{background-image:url("/images/about.jpg")!important;background-size:cover!important;background-position:center!important}
         .projectInfo{border:1px solid rgba(255,255,255,.62)}
         .primaryBtn,.navCta,.submitBtn{transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
         .primaryBtn:hover,.navCta:hover,.submitBtn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(31,35,33,.14)}
@@ -172,7 +174,7 @@ export default function App() {
             <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           </nav>
-          <a className="navCta" href="#contact">Book consultation</a>
+          <a className="navCta" href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp +91 91087 76325</a>
           <button className="menuBtn" onClick={() => setMenuOpen(v => !v)} aria-label="Toggle menu">☰</button>
         </div>
       </header>
@@ -195,10 +197,6 @@ export default function App() {
               </div>
             </div>
             <div className="heroVisual" aria-label="Stylised curtain interior visual">
-              <div className="window" />
-              <div className="curtainL" />
-              <div className="curtainR" />
-              <div className="sofa" />
               <div className="visualCard"><strong>Tailored to the room</strong><span>Layer sheers, curtains and blackout options for the right balance of light and privacy.</span></div>
             </div>
           </div>
@@ -221,7 +219,7 @@ export default function App() {
             </div>
             <div className="collectionGrid">
               {collections.map((item) => (
-                <article className="collectionCard" key={item.title}>
+                <article className="collectionCard" key={item.title} style={{backgroundImage:`url(${item.image})`}}>
                   <div className="fabricFold" />
                   <span className="tag">{item.tag}</span>
                   <h3>{item.title}</h3>
@@ -248,10 +246,10 @@ export default function App() {
           <div className="container">
             <div className="sectionHead">
               <div><div className="eyebrow">Project inspiration</div><h2>Designed to belong in the room.</h2></div>
-              <p>A considered edit of window treatments for calm, contemporary interiors. Real completed-project photography can replace these art-directed studies as your portfolio grows.</p>
+              <p>A considered edit of window treatments for calm, contemporary interiors, showing how layered fabrics can shape light, privacy and atmosphere.</p>
             </div>
             <div className="projectGrid">
-              {projects.map((p) => <article className="projectCard" key={p.name}><div className="projectInfo"><strong>{p.name}</strong><span>{p.type} • {p.tone}</span></div></article>)}
+              {projects.map((p) => <article className="projectCard" key={p.name} style={{backgroundImage:`url(${p.image})`}}><div className="projectInfo"><strong>{p.name}</strong><span>{p.type} • {p.tone}</span></div></article>)}
             </div>
           </div>
         </section>
@@ -271,7 +269,7 @@ export default function App() {
 
         <section>
           <div className="container faqWrap">
-            <div className="faqTitle"><div className="eyebrow">Common questions</div><h2>Before you book.</h2><p>We can replace these with your exact policies once pricing, locations, service area and consultation terms are confirmed.</p></div>
+            <div className="faqTitle"><div className="eyebrow">Common questions</div><h2>Before you book.</h2><p>A few helpful details about our made-to-measure consultation, measurement and installation journey.</p></div>
             <div>
               {faq.map(([q,a], i) => <div className={`faqItem ${activeFaq === i ? 'open' : ''}`} key={q}><button className="faqButton" onClick={() => setActiveFaq(activeFaq === i ? -1 : i)}><span>{q}</span><span>{activeFaq === i ? '−' : '+'}</span></button><div className="faqAnswer">{a}</div></div>)}
             </div>
@@ -281,13 +279,13 @@ export default function App() {
         <section id="contact" className="contact">
           <div className="container contactCard">
             <div><div className="eyebrow">Start your project</div><h2>Tell us about your windows.</h2><p>Share the room, approximate requirement and preferred style, and we’ll use it to prepare your consultation request.</p></div>
-            <form className="contactForm" onSubmit={(e) => { e.preventDefault(); setFormStatus("Thanks — your consultation request is ready. We’ll connect this form to your confirmed business inbox or WhatsApp before the public domain goes live."); }}>
+            <form className="contactForm" onSubmit={(e) => { e.preventDefault(); const data = new FormData(e.currentTarget); const message = `Hello The Drape Factory,%0A%0AI would like to request a consultation.%0A%0AName: ${encodeURIComponent(data.get("name"))}%0APhone: ${encodeURIComponent(data.get("phone"))}%0AProject: ${encodeURIComponent(data.get("project"))}%0AMessage: ${encodeURIComponent(data.get("message"))}`; setFormStatus("Opening WhatsApp with your enquiry…"); window.open(`${whatsappUrl}?text=${message}`, "_blank", "noopener,noreferrer"); }}>
               <div className="formGrid">
                 <div className="field"><label>Name</label><input name="name" autoComplete="name" required placeholder="Your name" /></div>
                 <div className="field"><label>Phone</label><input name="phone" autoComplete="tel" inputMode="tel" required placeholder="Mobile number" /></div>
                 <div className="field full"><label>Project type</label><input name="project" required placeholder="Curtains, sheers, blinds, full home..." /></div>
                 <div className="field full"><label>Message</label><textarea name="message" required placeholder="Tell us a little about your requirement" /></div>
-                <button className="submitBtn" type="submit">Request consultation</button>{formStatus && <p className="formStatus" role="status">{formStatus}</p>}
+                <button className="submitBtn" type="submit">Send enquiry on WhatsApp</button><p className="formStatus">Prefer email? <a href={`mailto:${email}`}><strong>{email}</strong></a></p>{formStatus && <p className="formStatus" role="status">{formStatus}</p>}
               </div>
             </form>
           </div>
@@ -300,7 +298,7 @@ export default function App() {
             <div className="footerBrand"><div className="brand"><span className="brandMark" />The Drape Factory</div><p>Custom window furnishings and interior textiles designed to bring the room together.</p></div>
             <div className="footerCol"><h4>Explore</h4><a href="#collections">Collections</a><a href="#projects">Projects</a><a href="#about">About</a></div>
             <div className="footerCol"><h4>Services</h4><a href="#contact">Consultation</a><a href="#contact">Measurement</a><a href="#contact">Installation</a></div>
-            <div className="footerCol"><h4>Contact</h4><a href="#contact">Book consultation</a><a href="#contact">Project enquiry</a></div>
+            <div className="footerCol"><h4>Contact</h4><a href={whatsappUrl} target="_blank" rel="noreferrer">+91 91087 76325</a><a href={`mailto:${email}`}>{email}</a></div>
           </div>
           <div className="footerBottom"><span>© {new Date().getFullYear()} The Drape Factory. All rights reserved.</span><span>thedrapefactory.in</span></div>
         </div>
