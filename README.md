@@ -1,18 +1,22 @@
-# The Drape Factory — Public Website Build 4.4
+# The Drape Factory — Public Website Build 5.0
 
-Clean CSS consolidation build.
+Reference-first desktop reconstruction.
 
-This version removes the layered desktop override strategy that caused the deployed layout to diverge from the approved reference.
+This build replaces the accumulated desktop CSS with one clean visual system based on the approved reference composition.
 
-What changed:
-- consolidated desktop CSS into one production block
-- recalibrated global typography and spacing
-- corrected hero scale and image ratio
-- corrected benefit strip so custom SVG icons render at the intended size
-- removed table-like benefit dividers in the winning CSS layer
-- tightened Collections, Process, Projects, About, FAQ, Contact and Footer
-- reduced excessive vertical whitespace
-- preserved current photography, logo, favicon, WhatsApp, email and enquiry flow
+Key changes:
+- larger desktop content scale
+- tighter vertical rhythm
+- larger hero typography with controlled hero image height
+- proper unboxed benefit icons
+- denser collection cards
+- compact single-row process band
+- tighter project gallery
+- balanced About section
+- reduced FAQ whitespace
+- smaller consultation panel with centered email fallback
+- compact footer
+- preserved clean photography, logo, favicon, WhatsApp and email functionality
 
 Deploy:
 - Build command: npm run build
