@@ -150,6 +150,22 @@ export default function App() {
         .field input:focus,.field textarea:focus{border-color:#9f8169;box-shadow:0 0 0 3px rgba(126,92,67,.08)}
         .formStatus{grid-column:1/-1;margin:0;padding:11px 13px;border-radius:12px;background:#f2eee8;color:#4d524e;font-size:13px;line-height:1.5}
         .footerBottom a{color:inherit}
+        /* BUILD 3.1 — final production finish */
+        .navWrap{position:relative;top:auto;z-index:30}
+        .brand{min-width:178px;line-height:1}
+        .brandLogo{display:block;width:168px;height:58px;object-fit:contain;object-position:left center}
+        .footerLogo{display:block;width:190px;height:86px;object-fit:contain;object-position:left center;margin-bottom:10px}
+        .brandMark{display:none}
+        .aboutVisual:before,.aboutVisual:after{display:none!important}
+        .aboutVisual{min-height:500px;background-position:center 48%!important;box-shadow:0 18px 48px rgba(38,33,28,.08)}
+        #about{padding-top:96px;padding-bottom:88px}
+        .aboutCopy{padding:8px 0}
+        .contact{padding-top:56px;scroll-margin-top:24px}
+        .contactCard{position:relative;isolation:isolate;overflow:hidden}
+        .contactCard:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.52),transparent 34%)}
+        .navCta{white-space:nowrap}
+        @media(max-width:900px){.brandLogo{width:146px;height:52px}.navCta{display:none}.nav{min-height:68px}.menuBtn{margin-left:auto}.footerLogo{width:170px;height:78px}.aboutVisual{min-height:430px}}
+        @media(max-width:620px){.brandLogo{width:126px;height:46px}.nav{min-height:62px}.aboutVisual{min-height:360px}.contact{padding-top:34px}.contactCard{padding:26px}.footerLogo{width:150px;height:70px}}
         @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
         @media(max-width:900px){
           .navLinks{display:none}.menuBtn{display:block}.navLinks.open{display:flex;position:absolute;left:20px;right:20px;top:72px;flex-direction:column;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
@@ -165,8 +181,7 @@ export default function App() {
       <header className="navWrap">
         <div className="container nav">
           <a href="#home" className="brand" aria-label="The Drape Factory home">
-            <span className="brandMark" aria-hidden="true" />
-            <span>The Drape Factory</span>
+            <img className="brandLogo" src="/images/logo.png" alt="The Drape Factory" />
           </a>
           <nav className={`navLinks ${menuOpen ? "open" : ""}`}>
             <a href="#collections" onClick={() => setMenuOpen(false)}>Collections</a>
@@ -261,7 +276,7 @@ export default function App() {
               <div className="eyebrow">The Drape Factory</div>
               <h2>A softer, more considered way to finish interiors.</h2>
               <p>We believe window furnishings should do more than cover a window. The right drape changes light, proportion, privacy and the overall feeling of a room.</p>
-              <p>Our website is designed around a premium but approachable consultation experience—helping customers move from inspiration to a finished solution without unnecessary complexity.</p>
+              <p>Our approach is built around a premium but approachable consultation experience—helping customers move from inspiration to a finished solution with thoughtful guidance at every stage.</p>
               <div className="aboutPoints"><div className="aboutPoint">Made-to-measure approach</div><div className="aboutPoint">Layered curtain solutions</div><div className="aboutPoint">Fabric-led recommendations</div><div className="aboutPoint">Residential & interior projects</div></div>
             </div>
           </div>
@@ -295,7 +310,7 @@ export default function App() {
       <footer>
         <div className="container">
           <div className="footerTop">
-            <div className="footerBrand"><div className="brand"><span className="brandMark" />The Drape Factory</div><p>Custom window furnishings and interior textiles designed to bring the room together.</p></div>
+            <div className="footerBrand"><div className="brand"><img className="footerLogo" src="/images/logo.png" alt="The Drape Factory" /></div><p>Custom window furnishings and interior textiles designed to bring the room together.</p></div>
             <div className="footerCol"><h4>Explore</h4><a href="#collections">Collections</a><a href="#projects">Projects</a><a href="#about">About</a></div>
             <div className="footerCol"><h4>Services</h4><a href="#contact">Consultation</a><a href="#contact">Measurement</a><a href="#contact">Installation</a></div>
             <div className="footerCol"><h4>Contact</h4><a href={whatsappUrl} target="_blank" rel="noreferrer">+91 91087 76325</a><a href={`mailto:${email}`}>{email}</a></div>
