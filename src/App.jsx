@@ -1,16 +1,16 @@
 import React, { useMemo, useState } from "react";
 
 const collections = [
-  { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces", tag: "Made to measure", image: "/images/curtains.jpg" },
-  { title: "Sheers", subtitle: "Soft daylight, layered privacy and an elegant finish", tag: "Light & airy", image: "/images/sheers.jpg" },
-  { title: "Blinds", subtitle: "Clean, functional window solutions for modern interiors", tag: "Modern control", image: "/images/blinds.jpg" },
-  { title: "Upholstery", subtitle: "Coordinated fabrics for sofas, chairs and interior accents", tag: "Complete the room", image: "/images/upholstery.jpg" },
+  { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces", tag: "Made to measure", image: "/images/curtains.webp" },
+  { title: "Sheers", subtitle: "Soft daylight, layered privacy and an elegant finish", tag: "Light & airy", image: "/images/sheers.webp" },
+  { title: "Blinds", subtitle: "Clean, functional window solutions for modern interiors", tag: "Modern control", image: "/images/blinds.webp" },
+  { title: "Upholstery", subtitle: "Coordinated fabrics for sofas, chairs and interior accents", tag: "Complete the room", image: "/images/upholstery.webp" },
 ];
 
 const projects = [
-  { name: "Warm Minimal Living", type: "Curtains + Sheers", tone: "Sand / Ivory", image: "/images/project-living.jpg" },
-  { name: "Contemporary Bedroom", type: "Blackout Curtains", tone: "Taupe / Linen", image: "/images/project-bedroom.jpg" },
-  { name: "Soft Daylight Dining", type: "Sheer Drapes", tone: "Pearl / White", image: "/images/project-dining.jpg" },
+  { name: "Warm Minimal Living", type: "Curtains + Sheers", tone: "Sand / Ivory", image: "/images/project-living.webp" },
+  { name: "Contemporary Bedroom", type: "Blackout Curtains", tone: "Taupe / Linen", image: "/images/project-bedroom.webp" },
+  { name: "Soft Daylight Dining", type: "Sheer Drapes", tone: "Pearl / White", image: "/images/project-dining.webp" },
 ];
 
 function ArrowIcon() {
@@ -73,7 +73,7 @@ export default function App() {
         .heroMeta{display:flex;gap:28px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);color:#5e625f;font-size:13px}
         .heroMeta strong{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
 
-        .heroVisual{position:relative;min-height:620px;border-radius:36px;overflow:hidden;background-image:linear-gradient(180deg,rgba(20,18,16,.02),rgba(20,18,16,.16)),url("/images/hero.jpg");background-size:cover;background-position:center;/* fallback */background-color:#ddd;background:
+        .heroVisual{position:relative;min-height:620px;border-radius:36px;overflow:hidden;background-image:linear-gradient(180deg,rgba(20,18,16,.02),rgba(20,18,16,.16)),url("/images/hero.webp");background-size:cover;background-position:center;/* fallback */background-color:#ddd;background:
           radial-gradient(circle at 70% 16%,rgba(255,255,255,.9),rgba(255,255,255,0) 25%),
           linear-gradient(115deg,#cdbfae 0 20%,#f4efe8 20% 48%,#bda893 48% 61%,#ded3c6 61% 100%);box-shadow:var(--shadow)}
         .heroVisual:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.0) 0 42px,rgba(255,255,255,.16) 42px 52px,rgba(0,0,0,.025) 52px 58px);mix-blend-mode:soft-light}
@@ -137,11 +137,11 @@ export default function App() {
         .navWrap{box-shadow:0 1px 0 rgba(31,35,33,.03)}
         .brand{font-weight:500}.brandMark{background:#fff}
         .hero{padding:72px 0 46px}.heroLead{max-width:570px}
-        .heroVisual{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.12)),url("/images/hero.jpg");background-size:cover;background-position:center}
+        .heroVisual{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.12)),url("/images/hero.webp");background-size:cover;background-position:center}
         .heroVisual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(54,43,34,.08));pointer-events:none}
         .collectionCard,.projectCard{isolation:isolate}
         .collectionCard:after,.projectCard:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 78% 20%,rgba(255,255,255,.62),transparent 26%)}
-        .collectionCard h3,.collectionCard p,.collectionCard .tag{position:relative;z-index:2}.collectionCard{background-size:cover!important;background-position:center!important}.collectionCard:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.03) 25%,rgba(20,18,16,.72) 100%);z-index:1}.collectionCard h3,.collectionCard p{color:#fff}.collectionCard .tag{background:rgba(255,255,255,.9)}.fabricFold{display:none}.projectCard{background-size:cover!important;background-position:center!important}.aboutVisual{background-image:url("/images/about.jpg")!important;background-size:cover!important;background-position:center!important}
+        .collectionCard h3,.collectionCard p,.collectionCard .tag{position:relative;z-index:2}.collectionCard{background-size:cover!important;background-position:center!important}.collectionCard:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.03) 25%,rgba(20,18,16,.72) 100%);z-index:1}.collectionCard h3,.collectionCard p{color:#fff}.collectionCard .tag{background:rgba(255,255,255,.9)}.fabricFold{display:none}.projectCard{background-size:cover!important;background-position:center!important}.aboutVisual{background-image:url("/images/about.webp")!important;background-size:cover!important;background-position:center!important}
         .projectInfo{border:1px solid rgba(255,255,255,.62)}
         .primaryBtn,.navCta,.submitBtn{transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
         .primaryBtn:hover,.navCta:hover,.submitBtn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(31,35,33,.14)}

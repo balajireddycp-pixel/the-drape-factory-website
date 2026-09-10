@@ -1,21 +1,24 @@
-# The Drape Factory — Public Website Build 3.1
+# The Drape Factory Public Website — Build 3.2 HD Visual Upgrade
 
-Production-polish build with generated interior imagery and verified customer contact integration.
+Production-ready Vite/React website for The Drape Factory.
 
-## Contact
-- WhatsApp / Mobile: +91 91087 76325
-- Email: orders@thedrapefactory.in
+## Build 3.2 changes
+- Upgraded all main photographic placements to larger WebP assets.
+- Hero: 1800×1050.
+- Collection cards: 1200×900 each.
+- Project inspiration cards: 1200×900 each.
+- About visual: 1200×1200.
+- High-quality WebP compression and edge sharpening for cleaner high-DPI rendering.
+- Retains the approved Build 3.1 layout, logo, copy and responsive behaviour.
+- Retains WhatsApp: +91 91087 76325.
+- Retains email: orders@thedrapefactory.in.
 
 ## Deploy
-- Build command: `npm run build`
-- Static output: `dist`
-- Cloudflare Worker/Pages project: `the-drape-factory-website`
+```bash
+npm install
+npm run build
+```
 
-The enquiry form opens WhatsApp with a structured pre-filled message. Email is available as a direct fallback.
+Cloudflare build command: `npm run build`
 
-
-## Build 3.1 final production finish
-- Uses the supplied The Drape Factory tailoring-unit logo in header and footer.
-- Removes the decorative overlay from the About visual.
-- Prevents the navigation bar from obscuring page content while scrolling.
-- Refines About and consultation section spacing for desktop and mobile.
+Output directory: `dist`
