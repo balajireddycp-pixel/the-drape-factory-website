@@ -150,6 +150,8 @@ export default function App() {
         .field input:focus,.field textarea:focus{border-color:#9f8169;box-shadow:0 0 0 3px rgba(126,92,67,.08)}
         .formStatus{grid-column:1/-1;margin:0;padding:11px 13px;border-radius:12px;background:#f2eee8;color:#4d524e;font-size:13px;line-height:1.5}
         .footerBottom a{color:inherit}
+        /* BUILD 3.3 — clean photography production finish */
+        .heroVisual,.collectionCard,.projectCard,.aboutVisual{image-rendering:auto}
         /* BUILD 3.1 — final production finish */
         .navWrap{position:relative;top:auto;z-index:30}
         .brand{min-width:178px;line-height:1}
@@ -211,7 +213,7 @@ export default function App() {
                 <div><strong>Complete finish</strong>From selection to installation</div>
               </div>
             </div>
-            <div className="heroVisual" aria-label="Stylised curtain interior visual">
+            <div className="heroVisual" aria-label="Custom layered curtains and sheers in a finished living room">
               <div className="visualCard"><strong>Tailored to the room</strong><span>Layer sheers, curtains and blackout options for the right balance of light and privacy.</span></div>
             </div>
           </div>

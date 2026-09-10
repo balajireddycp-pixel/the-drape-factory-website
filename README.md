@@ -1,24 +1,12 @@
-# The Drape Factory Public Website — Build 3.2 HD Visual Upgrade
+# The Drape Factory Public Website — Build 3.3 Clean Photography
 
-Production-ready Vite/React website for The Drape Factory.
+Production update focused on photography quality. The layout, logo, WhatsApp, email and enquiry behavior from Build 3.2/3.1 are preserved.
 
-## Build 3.2 changes
-- Upgraded all main photographic placements to larger WebP assets.
-- Hero: 1800×1050.
-- Collection cards: 1200×900 each.
-- Project inspiration cards: 1200×900 each.
-- About visual: 1200×1200.
-- High-quality WebP compression and edge sharpening for cleaner high-DPI rendering.
-- Retains the approved Build 3.1 layout, logo, copy and responsive behaviour.
-- Retains WhatsApp: +91 91087 76325.
-- Retains email: orders@thedrapefactory.in.
+## Build 3.3 changes
+- Replaced hero and principal collection/project/about visuals with clean photography assets containing no generated website text, labels, buttons or UI overlays.
+- Re-encoded delivery assets as high-quality JPEG + WebP.
+- Preserved responsive background-cover behavior.
+- WhatsApp: +91 91087 76325
+- Email: orders@thedrapefactory.in
 
-## Deploy
-```bash
-npm install
-npm run build
-```
-
-Cloudflare build command: `npm run build`
-
-Output directory: `dist`
+Deploy using the existing Cloudflare/GitHub pipeline.
