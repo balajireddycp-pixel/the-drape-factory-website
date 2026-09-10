@@ -1,29 +1,14 @@
-# The Drape Factory — Public Website Build 4.2
+# The Drape Factory — Public Website Build 4.3
 
-Pixel-density reference build.
+Targeted reference correction for the four-benefit strip.
 
-This version targets the approved reference screenshot's compact editorial proportions rather than generic desktop scaling.
-
-Refinements:
-- tighter header and navigation
-- shorter hero and more controlled image ratio
-- denser four-benefit strip
-- narrower Collections intro and shorter cards
-- shorter How It Works strip
-- smaller, tighter project gallery
-- reduced About height
-- reduced FAQ whitespace
-- smaller consultation card and centered email fallback
-- denser footer
-- dedicated laptop-width tuning for 1000–1280px viewports
-
-Preserved:
-- clean photography
-- Drape Factory logo
-- favicon
-- WhatsApp +91 91087 76325
-- orders@thedrapefactory.in
-- enquiry functionality
+Fixes:
+- Removed the table-like vertical dividers.
+- Removed the full-width bottom rule from the benefit strip.
+- Replaced placeholder Unicode symbols with proper custom line SVG icons.
+- Enlarged and aligned icons to match the approved premium reference.
+- Rebalanced icon/text spacing and typography.
+- Preserved the rest of Build 4.2 unchanged.
 
 Deploy:
 - Build command: npm run build

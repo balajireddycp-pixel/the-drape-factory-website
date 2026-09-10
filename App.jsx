@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-// Public Website Build 4.2 — Pixel Density Reference Match
+// Public Website Build 4.3 — Benefit Strip Reference Match
 
 const collections = [
   { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces.", tag: "Made to measure", image: "/images/curtains-clean-v34.webp" },
@@ -24,6 +24,60 @@ const steps = [
 
 function Arrow() {
   return <span aria-hidden="true">→</span>;
+}
+
+function BenefitIcon({ type }) {
+  const common = {
+    width: 38,
+    height: 38,
+    viewBox: "0 0 48 48",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    "aria-hidden": true,
+  };
+
+  if (type === "measure") {
+    return (
+      <svg {...common}>
+        <path d="M8 17c0-5 4-9 9-9h14c5 0 9 4 9 9s-4 9-9 9H17c-5 0-9-4-9-9Z"/>
+        <circle cx="17" cy="17" r="4"/>
+        <path d="M31 11v5M35 12v4M27 12v4M13 30h23a4 4 0 0 1 4 4v3H8v-3a4 4 0 0 1 4-4Z"/>
+        <path d="M14 30v7M20 30v4M26 30v7M32 30v4"/>
+      </svg>
+    );
+  }
+
+  if (type === "fabric") {
+    return (
+      <svg {...common}>
+        <path d="M10 9h28v30H10z"/>
+        <path d="M16 9v30M24 9v30M32 9v30M10 17h28M10 25h28M10 33h28"/>
+        <path d="M12 11l24 26M36 11 12 37"/>
+      </svg>
+    );
+  }
+
+  if (type === "finish") {
+    return (
+      <svg {...common}>
+        <circle cx="24" cy="24" r="16"/>
+        <path d="m16 24 5 5 11-12"/>
+        <path d="M24 5v4M24 39v4M5 24h4M39 24h4"/>
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...common}>
+      <path d="m7 23 17-14 17 14"/>
+      <path d="M11 21v19h26V21"/>
+      <path d="M18 40V27h12v13"/>
+      <path d="M15 18h18"/>
+    </svg>
+  );
 }
 
 export default function App() {
@@ -852,6 +906,81 @@ export default function App() {
           .projectsLayout{grid-template-columns:178px 1fr}
         }
 
+
+        /* BUILD 4.3 — approved benefit strip */
+        .benefits{
+          border-bottom:0 !important;
+          padding-top:18px;
+          padding-bottom:18px;
+        }
+        .benefitGrid{
+          display:grid;
+          grid-template-columns:repeat(4,minmax(0,1fr));
+          gap:34px;
+          min-height:0 !important;
+          align-items:center;
+        }
+        .benefit{
+          border:0 !important;
+          padding:0 !important;
+          display:grid;
+          grid-template-columns:46px minmax(0,1fr);
+          gap:14px !important;
+          align-items:center;
+          min-width:0;
+        }
+        .benefitIcon{
+          width:46px !important;
+          height:46px !important;
+          border:0 !important;
+          border-radius:0 !important;
+          display:grid;
+          place-items:center;
+          color:var(--accent);
+          background:transparent !important;
+          flex:0 0 auto;
+        }
+        .benefitIcon svg{display:block;width:40px;height:40px}
+        .benefit strong{
+          display:block;
+          margin:0 0 4px !important;
+          font-size:12px !important;
+          line-height:1.2;
+          font-weight:800;
+          color:var(--ink);
+        }
+        .benefit span{
+          display:block;
+          margin:0;
+          color:var(--muted);
+          font-size:10px !important;
+          line-height:1.35 !important;
+        }
+
+        @media(min-width:1000px){
+          .benefits{padding-top:19px;padding-bottom:20px}
+          .benefitGrid{gap:40px}
+        }
+
+        @media(max-width:980px){
+          .benefitGrid{
+            grid-template-columns:repeat(2,minmax(0,1fr));
+            gap:22px 28px;
+          }
+          .benefit{
+            border:0 !important;
+            padding:0 !important;
+          }
+        }
+
+        @media(max-width:600px){
+          .benefits{padding-top:16px;padding-bottom:16px}
+          .benefitGrid{grid-template-columns:1fr;gap:18px}
+          .benefit{grid-template-columns:42px 1fr;gap:12px !important}
+          .benefitIcon{width:42px !important;height:42px !important}
+          .benefitIcon svg{width:36px;height:36px}
+        }
+
       `}</style>
 
       <div className="topbar">
@@ -903,10 +1032,10 @@ export default function App() {
 
           <div className="container benefits">
             <div className="benefitGrid">
-              <div className="benefit"><div className="benefitIcon">◉</div><div><strong>Custom fit</strong><span>Made to your measurements</span></div></div>
-              <div className="benefit"><div className="benefitIcon">◇</div><div><strong>Curated fabrics</strong><span>Selected for your space</span></div></div>
-              <div className="benefit"><div className="benefitIcon">✓</div><div><strong>Complete finish</strong><span>From selection to installation</span></div></div>
-              <div className="benefit"><div className="benefitIcon">⌂</div><div><strong>End-to-end service</strong><span>A seamless, hassle-free experience</span></div></div>
+              <div className="benefit"><div className="benefitIcon"><BenefitIcon type="measure" /></div><div><strong>Custom fit</strong><span>Made to your measurements</span></div></div>
+              <div className="benefit"><div className="benefitIcon"><BenefitIcon type="fabric" /></div><div><strong>Curated fabrics</strong><span>Selected for your space</span></div></div>
+              <div className="benefit"><div className="benefitIcon"><BenefitIcon type="finish" /></div><div><strong>Complete finish</strong><span>From selection to installation</span></div></div>
+              <div className="benefit"><div className="benefitIcon"><BenefitIcon type="home" /></div><div><strong>End-to-end service</strong><span>A seamless, hassle-free experience</span></div></div>
             </div>
           </div>
         </section>
