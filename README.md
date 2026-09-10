@@ -1,12 +1,12 @@
-# The Drape Factory Public Website — Build 3.3 Clean Photography
+# The Drape Factory Public Website — Build 3.4
 
-Production update focused on photography quality. The layout, logo, WhatsApp, email and enquiry behavior from Build 3.2/3.1 are preserved.
+Production repair build.
 
-## Build 3.3 changes
-- Replaced hero and principal collection/project/about visuals with clean photography assets containing no generated website text, labels, buttons or UI overlays.
-- Re-encoded delivery assets as high-quality JPEG + WebP.
-- Preserved responsive background-cover behavior.
-- WhatsApp: +91 91087 76325
-- Email: orders@thedrapefactory.in
+- Rewired every customer-facing photograph to uniquely named `*-clean-v34.webp` assets.
+- Hero now uses a clean standalone photograph with no embedded text/UI.
+- Category, project and about imagery use new unique URLs to bypass stale browser/CDN asset caching.
+- Completed desktop alignment pass across header, hero, service strip, collections, process, projects, about, FAQ, contact and footer.
+- WhatsApp remains +91 91087 76325.
+- Email remains orders@thedrapefactory.in.
 
-Deploy using the existing Cloudflare/GitHub pipeline.
+Deploy by replacing the existing repository files and committing to `main`.

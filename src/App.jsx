@@ -1,16 +1,18 @@
 import React, { useMemo, useState } from "react";
 
+// Public Website Build 3.4 — Asset Wiring + Alignment Fix
+
 const collections = [
-  { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces", tag: "Made to measure", image: "/images/curtains.webp" },
-  { title: "Sheers", subtitle: "Soft daylight, layered privacy and an elegant finish", tag: "Light & airy", image: "/images/sheers.webp" },
-  { title: "Blinds", subtitle: "Clean, functional window solutions for modern interiors", tag: "Modern control", image: "/images/blinds.webp" },
-  { title: "Upholstery", subtitle: "Coordinated fabrics for sofas, chairs and interior accents", tag: "Complete the room", image: "/images/upholstery.webp" },
+  { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces", tag: "Made to measure", image: "/images/curtains-clean-v34.webp" },
+  { title: "Sheers", subtitle: "Soft daylight, layered privacy and an elegant finish", tag: "Light & airy", image: "/images/sheers-clean-v34.webp" },
+  { title: "Blinds", subtitle: "Clean, functional window solutions for modern interiors", tag: "Modern control", image: "/images/blinds-clean-v34.webp" },
+  { title: "Upholstery", subtitle: "Coordinated fabrics for sofas, chairs and interior accents", tag: "Complete the room", image: "/images/upholstery-clean-v34.webp" },
 ];
 
 const projects = [
-  { name: "Warm Minimal Living", type: "Curtains + Sheers", tone: "Sand / Ivory", image: "/images/project-living.webp" },
-  { name: "Contemporary Bedroom", type: "Blackout Curtains", tone: "Taupe / Linen", image: "/images/project-bedroom.webp" },
-  { name: "Soft Daylight Dining", type: "Sheer Drapes", tone: "Pearl / White", image: "/images/project-dining.webp" },
+  { name: "Warm Minimal Living", type: "Curtains + Sheers", tone: "Sand / Ivory", image: "/images/project-living-clean-v34.webp" },
+  { name: "Contemporary Bedroom", type: "Blackout Curtains", tone: "Taupe / Linen", image: "/images/project-bedroom-clean-v34.webp" },
+  { name: "Soft Daylight Dining", type: "Sheer Drapes", tone: "Pearl / White", image: "/images/project-dining-clean-v34.webp" },
 ];
 
 function ArrowIcon() {
@@ -73,7 +75,7 @@ export default function App() {
         .heroMeta{display:flex;gap:28px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);color:#5e625f;font-size:13px}
         .heroMeta strong{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
 
-        .heroVisual{position:relative;min-height:620px;border-radius:36px;overflow:hidden;background-image:linear-gradient(180deg,rgba(20,18,16,.02),rgba(20,18,16,.16)),url("/images/hero.webp");background-size:cover;background-position:center;/* fallback */background-color:#ddd;background:
+        .heroVisual{position:relative;min-height:620px;border-radius:36px;overflow:hidden;background-image:linear-gradient(180deg,rgba(20,18,16,.02),rgba(20,18,16,.16)),url("/images/hero-clean-v34.webp");background-size:cover;background-position:center;/* fallback */background-color:#ddd;background:
           radial-gradient(circle at 70% 16%,rgba(255,255,255,.9),rgba(255,255,255,0) 25%),
           linear-gradient(115deg,#cdbfae 0 20%,#f4efe8 20% 48%,#bda893 48% 61%,#ded3c6 61% 100%);box-shadow:var(--shadow)}
         .heroVisual:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.0) 0 42px,rgba(255,255,255,.16) 42px 52px,rgba(0,0,0,.025) 52px 58px);mix-blend-mode:soft-light}
@@ -137,11 +139,11 @@ export default function App() {
         .navWrap{box-shadow:0 1px 0 rgba(31,35,33,.03)}
         .brand{font-weight:500}.brandMark{background:#fff}
         .hero{padding:72px 0 46px}.heroLead{max-width:570px}
-        .heroVisual{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.12)),url("/images/hero.webp");background-size:cover;background-position:center}
+        .heroVisual{background-image:linear-gradient(180deg,rgba(20,18,16,.01),rgba(20,18,16,.12)),url("/images/hero-clean-v34.webp");background-size:cover;background-position:center}
         .heroVisual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(54,43,34,.08));pointer-events:none}
         .collectionCard,.projectCard{isolation:isolate}
         .collectionCard:after,.projectCard:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 78% 20%,rgba(255,255,255,.62),transparent 26%)}
-        .collectionCard h3,.collectionCard p,.collectionCard .tag{position:relative;z-index:2}.collectionCard{background-size:cover!important;background-position:center!important}.collectionCard:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.03) 25%,rgba(20,18,16,.72) 100%);z-index:1}.collectionCard h3,.collectionCard p{color:#fff}.collectionCard .tag{background:rgba(255,255,255,.9)}.fabricFold{display:none}.projectCard{background-size:cover!important;background-position:center!important}.aboutVisual{background-image:url("/images/about.webp")!important;background-size:cover!important;background-position:center!important}
+        .collectionCard h3,.collectionCard p,.collectionCard .tag{position:relative;z-index:2}.collectionCard{background-size:cover!important;background-position:center!important}.collectionCard:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.03) 25%,rgba(20,18,16,.72) 100%);z-index:1}.collectionCard h3,.collectionCard p{color:#fff}.collectionCard .tag{background:rgba(255,255,255,.9)}.fabricFold{display:none}.projectCard{background-size:cover!important;background-position:center!important}.aboutVisual{background-image:url("/images/about-clean-v34.webp")!important;background-size:cover!important;background-position:center!important}
         .projectInfo{border:1px solid rgba(255,255,255,.62)}
         .primaryBtn,.navCta,.submitBtn{transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
         .primaryBtn:hover,.navCta:hover,.submitBtn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(31,35,33,.14)}
@@ -168,6 +170,29 @@ export default function App() {
         .navCta{white-space:nowrap}
         @media(max-width:900px){.brandLogo{width:146px;height:52px}.navCta{display:none}.nav{min-height:68px}.menuBtn{margin-left:auto}.footerLogo{width:170px;height:78px}.aboutVisual{min-height:430px}}
         @media(max-width:620px){.brandLogo{width:126px;height:46px}.nav{min-height:62px}.aboutVisual{min-height:360px}.contact{padding-top:34px}.contactCard{padding:26px}.footerLogo{width:150px;height:70px}}
+        /* BUILD 3.4 — verified asset wiring + alignment */
+        .container{width:min(1240px,calc(100% - 48px))}
+        .nav{min-height:82px;display:grid;grid-template-columns:220px 1fr auto;align-items:center}
+        .brand{min-width:0}.brandLogo{width:198px;height:66px}
+        .navLinks{justify-content:center}
+        .hero{padding:64px 0 34px}.heroGrid{grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:64px;align-items:center}
+        .heroVisual{min-height:600px;background-position:center center!important}
+        .heroVisual:before{display:none}.heroVisual:after{background:linear-gradient(180deg,transparent 70%,rgba(31,35,33,.08))}
+        .heroMeta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+        .trustStrip{padding-top:20px}.trustGrid{align-items:stretch}.trustItem{height:100%;padding:20px}
+        section{padding:82px 0}
+        .sectionHead{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,480px);align-items:end;gap:64px;margin-bottom:38px}
+        .sectionHead p{max-width:none;margin:0}
+        .collectionGrid{gap:20px}.collectionCard{min-height:390px;padding:28px;background-position:center!important}
+        .collectionCard:after{display:none}
+        .process .sectionHead{align-items:end}.processGrid{margin-top:36px;gap:28px;align-items:start}.step{min-height:210px}.stepNum{margin-bottom:32px}
+        .projectGrid{grid-template-columns:1.15fr 1fr 1fr;gap:20px;align-items:stretch}.projectCard{min-height:390px;padding:18px;background-position:center!important}.projectCard:after,.projectCard:before{display:none}.projectInfo{width:min(92%,300px)}
+        .aboutGrid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:72px;align-items:center}.aboutVisual{min-height:520px;background-position:center!important}.aboutCopy{padding:0}.aboutPoints{gap:14px}.aboutPoint{min-height:54px;display:flex;align-items:center}
+        .faqWrap{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:84px;align-items:start}.faqTitle{padding-top:4px}.faqItem:first-child{margin-top:0}
+        .contactCard{grid-template-columns:minmax(0,.9fr) minmax(420px,1fr);gap:72px;padding:54px 58px;align-items:center}.contactForm{padding:24px}
+        .footerTop{grid-template-columns:1.8fr .7fr .8fr 1.05fr;gap:52px;align-items:start}.footerBrand p{max-width:310px}
+        @media(max-width:900px){.container{width:min(100% - 32px,1240px)}.nav{display:flex}.brandLogo{width:156px;height:54px}.heroGrid,.aboutGrid,.faqWrap,.contactCard{grid-template-columns:1fr;gap:36px}.sectionHead{grid-template-columns:1fr;gap:18px}.heroVisual{min-height:520px}.heroMeta{grid-template-columns:repeat(3,1fr)}.projectGrid{grid-template-columns:1fr 1fr}.projectCard:first-child{grid-column:1/-1}.footerTop{grid-template-columns:1fr 1fr;gap:34px}}
+        @media(max-width:620px){.container{width:min(100% - 24px,1240px)}.hero{padding-top:34px}.heroVisual{min-height:420px}.heroMeta{grid-template-columns:1fr;gap:12px}.collectionGrid,.processGrid,.projectGrid,.aboutPoints,.formGrid{grid-template-columns:1fr}.projectCard:first-child{grid-column:auto}.contactCard{padding:28px;gap:30px}.footerTop{grid-template-columns:1fr}}
         @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
         @media(max-width:900px){
           .navLinks{display:none}.menuBtn{display:block}.navLinks.open{display:flex;position:absolute;left:20px;right:20px;top:72px;flex-direction:column;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
