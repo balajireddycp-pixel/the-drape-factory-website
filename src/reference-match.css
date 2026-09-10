@@ -1,4 +1,4 @@
-/* Build 5.2 — final visual alignment on the confirmed working deployment baseline */
+/* Build 5.3 — production finish on the confirmed Build 5.2 deployment baseline */
 
 @media (min-width: 1000px) {
   .container { width: min(1240px, calc(100% - 64px)) !important; margin: 0 auto !important; }
@@ -119,4 +119,69 @@
   .benefit { border: 0 !important; padding: 0 !important; }
   .benefitIcon { border: 0 !important; background: transparent !important; }
   .emailFallback { justify-content: center !important; text-align: center !important; }
+}
+
+/* Build 5.3 — production finish: readability, rhythm, header strength */
+@media (min-width: 1000px) {
+  /* Header / brand */
+  .nav { min-height: 78px !important; grid-template-columns: 154px 1fr auto !important; }
+  .brand img { width: 116px !important; }
+  .navlinks { font-size: 12px !important; }
+  .whatsapp { font-size: 11px !important; }
+
+  /* Hero readability */
+  .eyebrow { font-size: 9.5px !important; }
+  h1 { font-size: 57px !important; max-width: 435px !important; }
+  .heroLead { font-size: 13px !important; max-width: 435px !important; }
+  .btnPrimary, .btnSecondary { font-size: 10.5px !important; }
+  .heroBadge { font-size: 9px !important; }
+  .heroBadge strong { font-size: 10px !important; }
+
+  /* Benefits */
+  .benefit strong { font-size: 11.5px !important; }
+  .benefit span { font-size: 10px !important; }
+
+  /* Collection copy */
+  .sideIntro p { font-size: 10.6px !important; }
+  .collectionCard p { font-size: 9.4px !important; }
+
+  /* Process */
+  .process { padding: 30px 0 !important; }
+  .step p { font-size: 9.4px !important; line-height: 1.46 !important; }
+
+  /* Projects */
+  .projectsLayout { gap: 30px !important; }
+  .projectsIntro p { font-size: 10px !important; line-height: 1.5 !important; }
+  .projectInfo strong { font-size: 10px !important; }
+  .projectInfo span { font-size: 8.4px !important; }
+
+  /* About */
+  #about { padding-top: 46px !important; padding-bottom: 46px !important; }
+  .aboutLayout { grid-template-columns: .86fr 1.14fr !important; gap: 46px !important; align-items: center !important; }
+  .aboutCopy { max-width: 650px !important; }
+  .aboutCopy h2 { font-size: 42px !important; line-height: 1.02 !important; }
+  .aboutCopy p { font-size: 10.4px !important; line-height: 1.52 !important; }
+  .aboutPoint { font-size: 9.5px !important; }
+
+  /* FAQ */
+  .faqLayout { gap: 52px !important; }
+  .faqIntro p { font-size: 10px !important; line-height: 1.5 !important; }
+  .faqButton { padding: 12px 0 !important; font-size: 10.3px !important; }
+  .faqAnswer { font-size: 9.4px !important; line-height: 1.5 !important; }
+
+  /* Contact */
+  .contact { padding-top: 14px !important; padding-bottom: 46px !important; }
+  .contactCard { padding: 40px 44px !important; }
+  .contactCopy p { font-size: 10px !important; line-height: 1.52 !important; }
+  .field input, .field textarea { font-size: 9.5px !important; }
+  .submitBtn { font-size: 9.7px !important; }
+  .emailFallback { font-size: 9px !important; }
+
+  /* Footer */
+  footer { padding: 32px 0 16px !important; }
+  .footerLogo { width: 112px !important; }
+  .footerBrand p { font-size: 9.4px !important; line-height: 1.5 !important; }
+  .footerCol h4 { font-size: 8.4px !important; }
+  .footerCol a { font-size: 8.9px !important; }
+  .footerBottom { font-size: 8.3px !important; }
 }
