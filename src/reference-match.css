@@ -1,4 +1,4 @@
-/* Build 5.3 — production finish on the confirmed Build 5.2 deployment baseline */
+/* Build 5.4 — mobile image recovery + responsive polish on confirmed Build 5.3 desktop baseline */
 
 @media (min-width: 1000px) {
   .container { width: min(1240px, calc(100% - 64px)) !important; margin: 0 auto !important; }
@@ -121,67 +121,407 @@
   .emailFallback { justify-content: center !important; text-align: center !important; }
 }
 
-/* Build 5.3 — production finish: readability, rhythm, header strength */
-@media (min-width: 1000px) {
-  /* Header / brand */
-  .nav { min-height: 78px !important; grid-template-columns: 154px 1fr auto !important; }
-  .brand img { width: 116px !important; }
-  .navlinks { font-size: 12px !important; }
-  .whatsapp { font-size: 11px !important; }
+/* Build 5.4 — mobile image recovery + responsive polish.
+   Desktop rules above remain unchanged. */
+@media (max-width: 759px) {
+  .container {
+    width: min(100% - 24px, 680px) !important;
+    margin: 0 auto !important;
+  }
 
-  /* Hero readability */
-  .eyebrow { font-size: 9.5px !important; }
-  h1 { font-size: 57px !important; max-width: 435px !important; }
-  .heroLead { font-size: 13px !important; max-width: 435px !important; }
-  .btnPrimary, .btnSecondary { font-size: 10.5px !important; }
-  .heroBadge { font-size: 9px !important; }
-  .heroBadge strong { font-size: 10px !important; }
+  .topbar .container {
+    min-height: 24px !important;
+    font-size: 7.5px !important;
+    letter-spacing: .13em !important;
+  }
 
-  /* Benefits */
-  .benefit strong { font-size: 11.5px !important; }
-  .benefit span { font-size: 10px !important; }
+  .nav {
+    min-height: 62px !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    gap: 12px !important;
+  }
 
-  /* Collection copy */
-  .sideIntro p { font-size: 10.6px !important; }
-  .collectionCard p { font-size: 9.4px !important; }
+  .brand img {
+    width: 96px !important;
+    height: auto !important;
+  }
 
-  /* Process */
-  .process { padding: 30px 0 !important; }
-  .step p { font-size: 9.4px !important; line-height: 1.46 !important; }
+  .navlinks {
+    display: none !important;
+  }
 
-  /* Projects */
-  .projectsLayout { gap: 30px !important; }
-  .projectsIntro p { font-size: 10px !important; line-height: 1.5 !important; }
-  .projectInfo strong { font-size: 10px !important; }
-  .projectInfo span { font-size: 8.4px !important; }
+  .whatsapp {
+    padding: 8px 11px !important;
+    font-size: 8.5px !important;
+  }
 
-  /* About */
-  #about { padding-top: 46px !important; padding-bottom: 46px !important; }
-  .aboutLayout { grid-template-columns: .86fr 1.14fr !important; gap: 46px !important; align-items: center !important; }
-  .aboutCopy { max-width: 650px !important; }
-  .aboutCopy h2 { font-size: 42px !important; line-height: 1.02 !important; }
-  .aboutCopy p { font-size: 10.4px !important; line-height: 1.52 !important; }
-  .aboutPoint { font-size: 9.5px !important; }
+  .hero {
+    padding: 14px 0 0 !important;
+  }
 
-  /* FAQ */
-  .faqLayout { gap: 52px !important; }
-  .faqIntro p { font-size: 10px !important; line-height: 1.5 !important; }
-  .faqButton { padding: 12px 0 !important; font-size: 10.3px !important; }
-  .faqAnswer { font-size: 9.4px !important; line-height: 1.5 !important; }
+  .heroGrid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
 
-  /* Contact */
-  .contact { padding-top: 14px !important; padding-bottom: 46px !important; }
-  .contactCard { padding: 40px 44px !important; }
-  .contactCopy p { font-size: 10px !important; line-height: 1.52 !important; }
-  .field input, .field textarea { font-size: 9.5px !important; }
-  .submitBtn { font-size: 9.7px !important; }
-  .emailFallback { font-size: 9px !important; }
+  .heroCopy {
+    padding: 10px 0 0 !important;
+  }
 
-  /* Footer */
-  footer { padding: 32px 0 16px !important; }
-  .footerLogo { width: 112px !important; }
-  .footerBrand p { font-size: 9.4px !important; line-height: 1.5 !important; }
-  .footerCol h4 { font-size: 8.4px !important; }
-  .footerCol a { font-size: 8.9px !important; }
-  .footerBottom { font-size: 8.3px !important; }
+  .eyebrow {
+    font-size: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  h1 {
+    font-size: 41px !important;
+    line-height: .96 !important;
+    max-width: 330px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .heroLead {
+    font-size: 10.5px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+  }
+
+  .actions {
+    gap: 8px !important;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    min-height: 34px !important;
+    padding: 0 13px !important;
+    font-size: 8.8px !important;
+  }
+
+  /* Explicitly restore background images on mobile.
+     These selectors override any mobile fallback that may flatten backgrounds. */
+  .heroImage {
+    display: block !important;
+    min-height: 250px !important;
+    max-height: none !important;
+    border-radius: 14px !important;
+    background-image: url("/images/hero-clean-v34.webp") !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-color: #ddd6cb !important;
+  }
+
+  .heroImage::after {
+    display: block !important;
+  }
+
+  .heroBadge {
+    left: 10px !important;
+    bottom: 10px !important;
+    width: 160px !important;
+    padding: 8px 9px !important;
+    border-radius: 8px !important;
+    font-size: 7.6px !important;
+  }
+
+  .heroBadge strong {
+    font-size: 8.5px !important;
+  }
+
+  .benefits {
+    padding: 16px 0 20px !important;
+  }
+
+  .benefitGrid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px 14px !important;
+  }
+
+  .benefit {
+    grid-template-columns: 32px 1fr !important;
+    gap: 9px !important;
+  }
+
+  .benefitIcon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .benefitIcon::before {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .benefit strong {
+    font-size: 9.4px !important;
+  }
+
+  .benefit span {
+    font-size: 8.2px !important;
+  }
+
+  section {
+    padding: 34px 0 !important;
+  }
+
+  .collectionsLayout,
+  .projectsLayout,
+  .aboutLayout,
+  .faqLayout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .sideIntro,
+  .projectsIntro,
+  .faqIntro {
+    padding-top: 0 !important;
+  }
+
+  .sideIntro h2 {
+    font-size: 35px !important;
+    line-height: 1 !important;
+  }
+
+  .sideIntro p {
+    font-size: 9.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .collectionGrid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .collectionCard {
+    min-height: 230px !important;
+    border-radius: 12px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: #ddd6cb !important;
+  }
+
+  .collectionCard:nth-child(1) {
+    background-image: url("/images/curtains-clean-v34.webp") !important;
+  }
+
+  .collectionCard:nth-child(2) {
+    background-image: url("/images/sheers-clean-v34.webp") !important;
+  }
+
+  .collectionCard:nth-child(3) {
+    background-image: url("/images/blinds-clean-v34.webp") !important;
+  }
+
+  .collectionCard:nth-child(4) {
+    background-image: url("/images/upholstery-clean-v34.webp") !important;
+  }
+
+  .collectionCard::before {
+    display: block !important;
+  }
+
+  .collectionCard h3 {
+    font-size: 22px !important;
+  }
+
+  .collectionCard p {
+    font-size: 8.8px !important;
+  }
+
+  .process {
+    padding: 28px 0 !important;
+  }
+
+  .processGrid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .processTitle h2 {
+    font-size: 31px !important;
+    max-width: 220px !important;
+  }
+
+  .step {
+    min-height: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .stepNum {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .step h3 {
+    font-size: 14px !important;
+  }
+
+  .step p {
+    font-size: 8.8px !important;
+    line-height: 1.5 !important;
+  }
+
+  .projectsIntro h2 {
+    font-size: 31px !important;
+  }
+
+  .projectsIntro p {
+    font-size: 9.2px !important;
+    line-height: 1.5 !important;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .projectCard {
+    min-height: 220px !important;
+  }
+
+  #about {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .aboutImage {
+    min-height: 270px !important;
+    max-height: none !important;
+    border-radius: 14px !important;
+  }
+
+  .aboutCopy h2 {
+    font-size: 35px !important;
+    line-height: 1.02 !important;
+  }
+
+  .aboutCopy p {
+    font-size: 9.4px !important;
+    line-height: 1.52 !important;
+  }
+
+  .aboutPoints {
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+  }
+
+  .aboutPoint {
+    min-height: 34px !important;
+    font-size: 8.8px !important;
+  }
+
+  .faqIntro h2 {
+    font-size: 31px !important;
+  }
+
+  .faqIntro p {
+    font-size: 9.2px !important;
+    line-height: 1.5 !important;
+  }
+
+  .faqButton {
+    padding: 11px 0 !important;
+    font-size: 9.2px !important;
+  }
+
+  .faqAnswer {
+    font-size: 8.8px !important;
+    line-height: 1.5 !important;
+  }
+
+  .contact {
+    padding-top: 4px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .contactCard {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 24px 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .contactCopy {
+    max-width: 100% !important;
+  }
+
+  .contactCopy h2 {
+    font-size: 32px !important;
+  }
+
+  .contactCopy p {
+    font-size: 9.2px !important;
+    line-height: 1.5 !important;
+  }
+
+  .contactForm {
+    width: 100% !important;
+    max-width: none !important;
+    justify-self: stretch !important;
+    padding: 10px !important;
+  }
+
+  .field input,
+  .field textarea {
+    font-size: 9px !important;
+    padding: 8px !important;
+  }
+
+  .field textarea {
+    min-height: 62px !important;
+  }
+
+  .submitBtn {
+    min-height: 36px !important;
+    font-size: 9px !important;
+  }
+
+  .emailFallback {
+    min-height: 30px !important;
+    font-size: 8px !important;
+  }
+
+  footer {
+    padding: 26px 0 12px !important;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px 18px !important;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1 !important;
+  }
+
+  .footerLogo {
+    width: 98px !important;
+  }
+
+  .footerBrand p {
+    max-width: 260px !important;
+    font-size: 8.8px !important;
+    line-height: 1.5 !important;
+  }
+
+  .footerCol h4 {
+    font-size: 7.6px !important;
+  }
+
+  .footerCol a {
+    font-size: 8.2px !important;
+  }
+
+  .footerBottom {
+    font-size: 7.5px !important;
+    margin-top: 18px !important;
+  }
 }
