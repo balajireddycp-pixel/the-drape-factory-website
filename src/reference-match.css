@@ -682,3 +682,367 @@
     z-index: 2 !important;
   }
 }
+
+
+
+/* Build 5.8 — final mobile production polish
+   Visual refinements only. Image rendering from Build 5.7 is frozen. */
+@media (max-width: 759px) {
+  body {
+    -webkit-text-size-adjust: 100% !important;
+  }
+
+  .container {
+    width: min(100% - 22px, 680px) !important;
+  }
+
+  .topbar .container {
+    min-height: 23px !important;
+    font-size: 7.4px !important;
+    letter-spacing: .12em !important;
+  }
+
+  .nav {
+    min-height: 60px !important;
+  }
+
+  .brand img {
+    width: 100px !important;
+  }
+
+  .whatsapp {
+    min-height: 32px !important;
+    padding: 0 10px !important;
+    font-size: 8.6px !important;
+  }
+
+  .hero {
+    padding-top: 12px !important;
+  }
+
+  .heroGrid {
+    gap: 14px !important;
+  }
+
+  .heroCopy {
+    padding-top: 8px !important;
+  }
+
+  .eyebrow {
+    font-size: 8.2px !important;
+    letter-spacing: .16em !important;
+  }
+
+  h1 {
+    font-size: 42px !important;
+    line-height: .95 !important;
+    letter-spacing: -.035em !important;
+    max-width: 325px !important;
+    margin-bottom: 11px !important;
+  }
+
+  .heroLead {
+    font-size: 10.8px !important;
+    line-height: 1.56 !important;
+    margin-bottom: 13px !important;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    min-height: 35px !important;
+    padding: 0 14px !important;
+    font-size: 9px !important;
+  }
+
+  .heroImage {
+    height: 258px !important;
+    min-height: 258px !important;
+    max-height: 258px !important;
+    border-radius: 14px !important;
+  }
+
+  .heroBadge {
+    width: 166px !important;
+    padding: 8px 9px !important;
+    font-size: 7.9px !important;
+    line-height: 1.4 !important;
+  }
+
+  .heroBadge strong {
+    font-size: 8.8px !important;
+  }
+
+  .benefits {
+    padding: 18px 0 22px !important;
+  }
+
+  .benefitGrid {
+    gap: 18px 12px !important;
+  }
+
+  .benefit {
+    grid-template-columns: 31px 1fr !important;
+    gap: 8px !important;
+  }
+
+  .benefitIcon,
+  .benefitIcon::before {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .benefit strong {
+    font-size: 9.6px !important;
+  }
+
+  .benefit span {
+    font-size: 8.4px !important;
+    line-height: 1.4 !important;
+  }
+
+  section {
+    padding: 36px 0 !important;
+  }
+
+  .collectionsLayout,
+  .projectsLayout,
+  .aboutLayout,
+  .faqLayout {
+    gap: 20px !important;
+  }
+
+  .sideIntro h2,
+  .aboutCopy h2 {
+    font-size: 35px !important;
+    line-height: 1 !important;
+  }
+
+  .sideIntro p,
+  .aboutCopy p,
+  .faqIntro p,
+  .projectsIntro p,
+  .contactCopy p {
+    font-size: 9.7px !important;
+    line-height: 1.55 !important;
+  }
+
+  .collectionGrid {
+    gap: 11px !important;
+  }
+
+  .collectionCard {
+    min-height: 232px !important;
+    border-radius: 13px !important;
+    padding: 13px !important;
+  }
+
+  .collectionTag {
+    font-size: 7px !important;
+    padding: 4px 6px !important;
+  }
+
+  .collectionBottom {
+    align-items: flex-end !important;
+    gap: 10px !important;
+  }
+
+  .collectionCard h3 {
+    font-size: 23px !important;
+    margin-bottom: 2px !important;
+    text-shadow: 0 1px 8px rgba(0,0,0,.22) !important;
+  }
+
+  .collectionCard p {
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+    max-width: 230px !important;
+    text-shadow: 0 1px 8px rgba(0,0,0,.24) !important;
+  }
+
+  .circleArrow {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 12px !important;
+  }
+
+  .process {
+    padding: 30px 0 32px !important;
+  }
+
+  .processGrid {
+    gap: 20px !important;
+  }
+
+  .processTitle h2 {
+    font-size: 32px !important;
+    line-height: 1 !important;
+    max-width: 235px !important;
+  }
+
+  .step {
+    padding-bottom: 2px !important;
+  }
+
+  .stepNum {
+    width: 27px !important;
+    height: 27px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .step h3 {
+    font-size: 14.5px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .step p {
+    font-size: 9.1px !important;
+    line-height: 1.52 !important;
+  }
+
+  .projectsIntro h2,
+  .faqIntro h2 {
+    font-size: 31px !important;
+    line-height: 1 !important;
+  }
+
+  .outlineBtn {
+    padding: 8px 12px !important;
+    font-size: 8.8px !important;
+  }
+
+  .projectGrid {
+    gap: 11px !important;
+  }
+
+  .projectCard {
+    min-height: 222px !important;
+    border-radius: 12px !important;
+  }
+
+  .projectInfo {
+    left: 9px !important;
+    right: 9px !important;
+    bottom: 9px !important;
+    padding: 8px 9px !important;
+  }
+
+  .projectInfo strong {
+    font-size: 9.6px !important;
+  }
+
+  .projectInfo span {
+    font-size: 8px !important;
+  }
+
+  #about {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .aboutImage {
+    min-height: 280px !important;
+    border-radius: 14px !important;
+  }
+
+  .aboutPoints {
+    gap: 8px !important;
+    margin-top: 13px !important;
+  }
+
+  .aboutPoint {
+    min-height: 36px !important;
+    padding: 8px 10px !important;
+    font-size: 9px !important;
+    border-radius: 8px !important;
+  }
+
+  .faqButton {
+    padding: 12px 0 !important;
+    font-size: 9.5px !important;
+  }
+
+  .faqAnswer {
+    padding: 0 18px 10px 0 !important;
+    font-size: 9px !important;
+    line-height: 1.52 !important;
+  }
+
+  .contact {
+    padding-top: 6px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .contactCard {
+    gap: 18px !important;
+    padding: 24px 16px !important;
+    border-radius: 15px !important;
+  }
+
+  .contactCopy h2 {
+    font-size: 32px !important;
+    line-height: 1 !important;
+  }
+
+  .contactForm {
+    padding: 11px !important;
+    border-radius: 10px !important;
+  }
+
+  .field label {
+    font-size: 7.5px !important;
+  }
+
+  .field input,
+  .field textarea {
+    padding: 8px 9px !important;
+    font-size: 9.2px !important;
+    border-radius: 7px !important;
+  }
+
+  .field textarea {
+    min-height: 64px !important;
+  }
+
+  .submitBtn {
+    min-height: 37px !important;
+    font-size: 9.2px !important;
+  }
+
+  .emailFallback {
+    min-height: 31px !important;
+    font-size: 8.2px !important;
+  }
+
+  footer {
+    padding: 28px 0 13px !important;
+  }
+
+  .footerGrid {
+    gap: 22px 18px !important;
+  }
+
+  .footerLogo {
+    width: 102px !important;
+  }
+
+  .footerBrand p {
+    font-size: 8.9px !important;
+    line-height: 1.52 !important;
+  }
+
+  .footerCol h4 {
+    font-size: 7.7px !important;
+    margin-bottom: 7px !important;
+  }
+
+  .footerCol a {
+    font-size: 8.3px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .footerBottom {
+    margin-top: 18px !important;
+    padding-top: 11px !important;
+    font-size: 7.6px !important;
+  }
+}
