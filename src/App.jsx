@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from "react";
 
-// Public Website Build 4.1 — Reference Match
+// Public Website Build 5.5 — Source-Level Mobile Image Fix
 
 const collections = [
-  { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces.", tag: "Made to measure", image: "/images/curtains-clean-v34.webp" },
-  { title: "Sheers", subtitle: "Soft daylight, layered privacy and an elegant finish.", tag: "Light & airy", image: "/images/sheers-clean-v34.webp" },
-  { title: "Blinds", subtitle: "Clean, functional window solutions for modern interiors.", tag: "Modern control", image: "/images/blinds-clean-v34.webp" },
-  { title: "Upholstery", subtitle: "Coordinated fabrics for sofas, chairs and interior accents.", tag: "Complete the room", image: "/images/upholstery-clean-v34.webp" },
+  { title: "Curtains", subtitle: "Tailored drapery for living, dining and bedroom spaces.", tag: "Made to measure", image: "/images/curtains-safe-v55.jpg" },
+  { title: "Sheers", subtitle: "Soft daylight, layered privacy and an elegant finish.", tag: "Light & airy", image: "/images/sheers-safe-v55.jpg" },
+  { title: "Blinds", subtitle: "Clean, functional window solutions for modern interiors.", tag: "Modern control", image: "/images/blinds-safe-v55.jpg" },
+  { title: "Upholstery", subtitle: "Coordinated fabrics for sofas, chairs and interior accents.", tag: "Complete the room", image: "/images/upholstery-safe-v55.jpg" },
 ];
 
 const projects = [
@@ -187,12 +187,23 @@ export default function App() {
           border-radius:17px;
           position:relative;
           overflow:hidden;
-          background:url("/images/hero-clean-v34.webp") center/cover no-repeat;
+          background:#ddd6cb;
+        }
+        .heroImage > img{
+          position:absolute;
+          inset:0;
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          object-position:center;
+          display:block;
+          z-index:0;
         }
         .heroImage:after{
           content:"";position:absolute;inset:0;
           background:linear-gradient(180deg,transparent 58%,rgba(20,24,21,.14));
           pointer-events:none;
+          z-index:1;
         }
         .heroBadge{
           position:absolute;z-index:2;
@@ -267,13 +278,22 @@ export default function App() {
           min-height:186px;
           border-radius:12px;
           overflow:hidden;
-          background-size:cover;
-          background-position:center;
+          background:#ddd6cb;
           display:flex;
           flex-direction:column;
           justify-content:flex-end;
           padding:13px;
           isolation:isolate;
+        }
+        .collectionCard > img{
+          position:absolute;
+          inset:0;
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          object-position:center;
+          display:block;
+          z-index:-2;
         }
         .collectionCard:before{
           content:"";position:absolute;inset:0;z-index:-1;
@@ -661,7 +681,14 @@ export default function App() {
               </div>
             </div>
 
-            <div className="heroImage" aria-label="Living room with layered curtains and sheers">
+            <div className="heroImage">
+              <img
+                src="/images/hero-safe-v55.jpg"
+                alt="Living room with layered curtains and sheers"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
               <div className="heroBadge">
                 <strong>Tailored to the room</strong>
                 Layered curtains, sheers and blinds balanced for light and privacy.
@@ -690,11 +717,13 @@ export default function App() {
 
             <div className="collectionGrid">
               {collections.map((item) => (
-                <article
-                  className="collectionCard"
-                  key={item.title}
-                  style={{backgroundImage:`url(${item.image})`}}
-                >
+                <article className="collectionCard" key={item.title}>
+                  <img
+                    src={item.image}
+                    alt={`${item.title} collection`}
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <span className="collectionTag">{item.tag}</span>
                   <div className="collectionBottom">
                     <div>
