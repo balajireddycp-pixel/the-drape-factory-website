@@ -1046,3 +1046,94 @@
     font-size: 7.6px !important;
   }
 }
+
+
+
+/* Build 5.9 — mobile header + collection tag fix */
+
+/* Restore collection tags as compact pills on every breakpoint. */
+.collectionCard {
+  position: relative !important;
+}
+
+.collectionTag {
+  position: absolute !important;
+  left: 11px !important;
+  top: 11px !important;
+  width: max-content !important;
+  max-width: calc(100% - 22px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  padding: 5px 8px !important;
+  border-radius: 999px !important;
+  z-index: 3 !important;
+}
+
+.collectionBottom {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Mobile header: logo + WhatsApp + menu stay on one compact row. */
+@media (max-width: 759px) {
+  .header .nav {
+    min-height: 62px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    position: relative !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .brand {
+    display: flex !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+  }
+
+  .brand img {
+    width: 92px !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .whatsapp {
+    margin-left: auto !important;
+    flex: 0 0 auto !important;
+    min-height: 32px !important;
+    padding: 0 10px !important;
+    font-size: 8.2px !important;
+  }
+
+  .menuBtn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    width: 34px !important;
+    height: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: var(--ink) !important;
+    font-size: 22px !important;
+    line-height: 1 !important;
+  }
+
+  .navlinks.open {
+    left: 0 !important;
+    right: 0 !important;
+    top: 62px !important;
+    width: 100% !important;
+    z-index: 30 !important;
+  }
+
+  .collectionTag {
+    left: 10px !important;
+    top: 10px !important;
+    padding: 4px 7px !important;
+    font-size: 7px !important;
+  }
+}
