@@ -623,3 +623,62 @@
   .heroImage::after { z-index: 1 !important; }
   .heroBadge { z-index: 2 !important; }
 }
+
+
+/* Build 5.7 — mobile image CSS cleanup */
+@media (max-width: 759px) {
+  .heroImage,
+  .collectionCard {
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: auto !important;
+    background-image: none !important;
+    background-color: #ddd6cb !important;
+  }
+
+  .heroImage::after,
+  .collectionCard::before {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+  }
+
+  .heroImage {
+    min-height: 250px !important;
+    height: 250px !important;
+    max-height: 250px !important;
+  }
+
+  .heroImage > img,
+  .collectionCard > img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 0 !important;
+    transform: none !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .heroBadge {
+    position: absolute !important;
+    z-index: 2 !important;
+  }
+
+  .collectionCard {
+    min-height: 230px !important;
+    box-shadow: inset 0 -90px 70px -58px rgba(0,0,0,.62) !important;
+  }
+
+  .collectionTag,
+  .collectionBottom {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+}
