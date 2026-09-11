@@ -1,4 +1,4 @@
-/* Build 5.4 — mobile image recovery + responsive polish on confirmed Build 5.3 desktop baseline */
+/* Build 5.5 — source-level mobile image fix + responsive polish */
 
 @media (min-width: 1000px) {
   .container { width: min(1240px, calc(100% - 64px)) !important; margin: 0 auto !important; }
@@ -523,5 +523,52 @@
   .footerBottom {
     font-size: 7.5px !important;
     margin-top: 18px !important;
+  }
+}
+
+
+/* Build 5.5 source-image safety layer */
+.heroImage,
+.collectionCard {
+  background-image: none !important;
+}
+
+.heroImage > img,
+.collectionCard > img {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 759px) {
+  .heroImage {
+    background-image: none !important;
+    background-color: #ddd6cb !important;
+  }
+
+  .heroImage > img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    z-index: 0 !important;
+  }
+
+  .collectionCard {
+    background-image: none !important;
+    background-color: #ddd6cb !important;
+  }
+
+  .collectionCard > img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    z-index: -2 !important;
   }
 }
