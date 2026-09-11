@@ -572,3 +572,54 @@
     z-index: -2 !important;
   }
 }
+
+/* Build 5.6 — image layer fix
+   Keep real image elements inside the card stacking context instead of behind it. */
+.collectionCard {
+  isolation: isolate !important;
+}
+
+.collectionCard > img {
+  z-index: 0 !important;
+}
+
+.collectionCard::before {
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.collectionTag,
+.collectionBottom,
+.collectionCard h3,
+.collectionCard p,
+.circleArrow {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Hero uses the same safe image/overlay/content layering. */
+.heroImage {
+  isolation: isolate !important;
+}
+
+.heroImage > img {
+  z-index: 0 !important;
+}
+
+.heroImage::after {
+  z-index: 1 !important;
+}
+
+.heroBadge {
+  z-index: 2 !important;
+}
+
+@media (max-width: 759px) {
+  .collectionCard > img { z-index: 0 !important; }
+  .collectionCard::before { z-index: 1 !important; }
+  .collectionTag, .collectionBottom { z-index: 2 !important; }
+
+  .heroImage > img { z-index: 0 !important; }
+  .heroImage::after { z-index: 1 !important; }
+  .heroBadge { z-index: 2 !important; }
+}
